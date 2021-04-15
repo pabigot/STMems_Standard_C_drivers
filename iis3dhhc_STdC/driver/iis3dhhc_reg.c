@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "iis3dhhc_reg.h"
+#include <stmemsc/iis3dhhc_reg.h>
 
 /**
   * @defgroup  IIS3DHHC

@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lis3dsh_reg.h"
+#include <stmemsc/lis3dsh_reg.h>
 
 /**
   * @defgroup  LIS3DSH

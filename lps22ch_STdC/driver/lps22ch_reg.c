@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lps22ch_reg.h"
+#include <stmemsc/lps22ch_reg.h>
 
 /**
   * @defgroup  LPS22CH

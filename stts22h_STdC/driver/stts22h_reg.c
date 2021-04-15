@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "stts22h_reg.h"
+#include <stmemsc/stts22h_reg.h>
 
 /**
   * @defgroup    STTS22H

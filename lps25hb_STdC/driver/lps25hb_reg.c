@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lps25hb_reg.h"
+#include <stmemsc/lps25hb_reg.h>
 
 /**
   * @defgroup    LPS25HB

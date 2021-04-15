@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "iis2dh_reg.h"
+#include <stmemsc/iis2dh_reg.h>
 
 /**
   * @defgroup  IIS2DH

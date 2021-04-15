@@ -1,0 +1,1 @@
+../lsm6dsr_STdC/driver/lsm6dsr_reg.c

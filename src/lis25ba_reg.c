@@ -1,0 +1,1 @@
+../lis25ba_STdC/driver/lis25ba_reg.c

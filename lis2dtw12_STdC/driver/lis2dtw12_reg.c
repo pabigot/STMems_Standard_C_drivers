@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lis2dtw12_reg.h"
+#include <stmemsc/lis2dtw12_reg.h>
 
 /**
   * @defgroup  LIS2DTW12

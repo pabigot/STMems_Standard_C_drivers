@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lis3mdl_reg.h"
+#include <stmemsc/lis3mdl_reg.h>
 
 /**
   * @defgroup    LIS3MDL

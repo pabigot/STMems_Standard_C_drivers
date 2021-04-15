@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lsm303agr_reg.h"
+#include <stmemsc/lsm303agr_reg.h>
 
 /**
   * @defgroup  LSM303AGR

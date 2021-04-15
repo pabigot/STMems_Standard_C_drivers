@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lps33hw_reg.h"
+#include <stmemsc/lps33hw_reg.h>
 
 /**
   * @defgroup    LPS33HW

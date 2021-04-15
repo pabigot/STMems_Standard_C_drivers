@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "ism330dlc_reg.h"
+#include <stmemsc/ism330dlc_reg.h>
 
 /**
   * @defgroup    ISM330DLC

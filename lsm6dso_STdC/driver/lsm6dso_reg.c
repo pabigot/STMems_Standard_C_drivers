@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lsm6dso_reg.h"
+#include <stmemsc/lsm6dso_reg.h>
 #include <stddef.h>
 
 /**

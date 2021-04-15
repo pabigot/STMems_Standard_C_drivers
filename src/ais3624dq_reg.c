@@ -1,0 +1,1 @@
+../ais3624dq_STdC/driver/ais3624dq_reg.c

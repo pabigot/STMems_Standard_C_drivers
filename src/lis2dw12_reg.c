@@ -1,0 +1,1 @@
+../lis2dw12_STdC/driver/lis2dw12_reg.c

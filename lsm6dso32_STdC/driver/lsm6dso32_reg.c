@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lsm6dso32_reg.h"
+#include <stmemsc/lsm6dso32_reg.h>
 
 /**
   * @defgroup  LSM6DSO32

@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "ism330dhcx_reg.h"
+#include <stmemsc/ism330dhcx_reg.h>
 
 /**
   * @defgroup    ISM330DHCX

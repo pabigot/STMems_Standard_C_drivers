@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "iis2iclx_reg.h"
+#include <stmemsc/iis2iclx_reg.h>
 
 /**
   * @defgroup    IIS2ICLX

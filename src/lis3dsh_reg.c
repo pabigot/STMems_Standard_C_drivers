@@ -1,0 +1,1 @@
+../lis3dsh_STdC/driver/lis3dsh_reg.c

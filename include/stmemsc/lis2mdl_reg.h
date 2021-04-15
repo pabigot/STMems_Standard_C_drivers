@@ -1,0 +1,1 @@
+../../lis2mdl_STdC/driver/lis2mdl_reg.h

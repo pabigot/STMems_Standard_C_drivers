@@ -1,0 +1,1 @@
+../lsm303agr_STdC/driver/lsm303agr_reg.c

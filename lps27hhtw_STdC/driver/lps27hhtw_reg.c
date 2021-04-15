@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lps27hhtw_reg.h"
+#include <stmemsc/lps27hhtw_reg.h>
 
 /**
   * @defgroup  LPS27HHTW

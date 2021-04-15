@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lsm9ds1_reg.h"
+#include <stmemsc/lsm9ds1_reg.h>
 
 /**
   * @defgroup    LSM9DS1

@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "ais2ih_reg.h"
+#include <stmemsc/ais2ih_reg.h>
 
 /**
   * @defgroup  AIS2IH

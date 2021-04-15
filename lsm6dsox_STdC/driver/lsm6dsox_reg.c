@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lsm6dsox_reg.h"
+#include <stmemsc/lsm6dsox_reg.h>
 
 /**
   * @defgroup  LSM6DSOX

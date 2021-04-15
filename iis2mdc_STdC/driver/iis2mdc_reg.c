@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "iis2mdc_reg.h"
+#include <stmemsc/iis2mdc_reg.h>
 /**
   * @defgroup  IIS2MDC
   * @brief     This file provides a set of functions needed to drive the

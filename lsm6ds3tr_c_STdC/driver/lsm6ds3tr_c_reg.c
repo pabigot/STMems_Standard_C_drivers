@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lsm6ds3tr_c_reg.h"
+#include <stmemsc/lsm6ds3tr_c_reg.h>
 
 /**
   * @defgroup    LSM6DS3TR_C

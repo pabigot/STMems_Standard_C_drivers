@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "iis3dwb_reg.h"
+#include <stmemsc/iis3dwb_reg.h>
 
 /**
   * @defgroup    IIS3DWB

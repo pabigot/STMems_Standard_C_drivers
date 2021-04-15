@@ -1,0 +1,1 @@
+../../lps25hb_STdC/driver/lps25hb_reg.h

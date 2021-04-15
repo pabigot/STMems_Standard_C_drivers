@@ -1,0 +1,1 @@
+../../a3g4250d_STdC/driver/a3g4250d_reg.h

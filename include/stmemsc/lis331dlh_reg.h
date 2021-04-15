@@ -1,0 +1,1 @@
+../../lis331dlh_STdC/driver/lis331dlh_reg.h

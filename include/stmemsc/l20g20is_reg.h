@@ -1,0 +1,1 @@
+../../l20g20is_STdC/driver/l20g20is_reg.h

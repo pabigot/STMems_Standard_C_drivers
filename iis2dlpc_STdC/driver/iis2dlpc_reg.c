@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "iis2dlpc_reg.h"
+#include <stmemsc/iis2dlpc_reg.h>
 
 /**
   * @defgroup  IIS2DLPC

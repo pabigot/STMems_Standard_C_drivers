@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "ism303dac_reg.h"
+#include <stmemsc/ism303dac_reg.h>
 
 /**
   * @defgroup  ISM303DAC

@@ -1,0 +1,1 @@
+../../lis2dtw12_STdC/driver/lis2dtw12_reg.h

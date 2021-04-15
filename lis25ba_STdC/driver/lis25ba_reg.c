@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lis25ba_reg.h"
+#include <stmemsc/lis25ba_reg.h>
 
 /**
   * @defgroup  LIS25BA

@@ -1,0 +1,1 @@
+../../lsm303ah_STdC/driver/lsm303ah_reg.h

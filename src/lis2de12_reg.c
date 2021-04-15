@@ -1,0 +1,1 @@
+../lis2de12_STdC/driver/lis2de12_reg.c

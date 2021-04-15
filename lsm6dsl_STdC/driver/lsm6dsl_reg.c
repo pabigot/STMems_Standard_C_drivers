@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "lsm6dsl_reg.h"
+#include <stmemsc/lsm6dsl_reg.h>
 
 /**
   * @defgroup    LSM6DSL

@@ -17,7 +17,7 @@
  ******************************************************************************
  */
 
-#include "h3lis100dl_reg.h"
+#include <stmemsc/h3lis100dl_reg.h>
 
 /**
   * @defgroup    H3LIS100DL

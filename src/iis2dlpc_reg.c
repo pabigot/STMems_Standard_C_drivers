@@ -1,0 +1,1 @@
+../iis2dlpc_STdC/driver/iis2dlpc_reg.c
