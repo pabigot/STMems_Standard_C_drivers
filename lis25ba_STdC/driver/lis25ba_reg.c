@@ -204,8 +204,8 @@ int32_t lis25ba_bus_mode_get(stmdev_ctx_t *ctx,
                              lis25ba_bus_mode_t *val)
 {
   lis25ba_tdm_ctrl_reg_t tdm_ctrl_reg;
-  lis25ba_tdm_cmax_h_t tdm_cmax_h;
-  lis25ba_tdm_cmax_l_t tdm_cmax_l;
+  lis25ba_tdm_cmax_h_t tdm_cmax_h = { 0 };
+  lis25ba_tdm_cmax_l_t tdm_cmax_l = { 0 };
   uint8_t reg[2];
   int32_t ret;
   ret = lis25ba_read_reg(ctx, LIS25BA_TDM_CTRL_REG,
