@@ -452,23 +452,23 @@ typedef union {
   *
   */
 
-int32_t h3lis100dl_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t h3lis100dl_read_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                             uint8_t *data,
                             uint16_t len);
-int32_t h3lis100dl_write_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t h3lis100dl_write_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                              uint8_t *data,
                              uint16_t len);
 
 float_t h3lis100dl_from_fs100g_to_mg(int8_t lsb);
 
-int32_t h3lis100dl_axis_x_data_set(stmdev_ctx_t *ctx, uint8_t val);
-int32_t h3lis100dl_axis_x_data_get(stmdev_ctx_t *ctx, uint8_t *val);
+int32_t h3lis100dl_axis_x_data_set(const stmdev_ctx_t *ctx, uint8_t val);
+int32_t h3lis100dl_axis_x_data_get(const stmdev_ctx_t *ctx, uint8_t *val);
 
-int32_t h3lis100dl_axis_y_data_set(stmdev_ctx_t *ctx, uint8_t val);
-int32_t h3lis100dl_axis_y_data_get(stmdev_ctx_t *ctx, uint8_t *val);
+int32_t h3lis100dl_axis_y_data_set(const stmdev_ctx_t *ctx, uint8_t val);
+int32_t h3lis100dl_axis_y_data_get(const stmdev_ctx_t *ctx, uint8_t *val);
 
-int32_t h3lis100dl_axis_z_data_set(stmdev_ctx_t *ctx, uint8_t val);
-int32_t h3lis100dl_axis_z_data_get(stmdev_ctx_t *ctx, uint8_t *val);
+int32_t h3lis100dl_axis_z_data_set(const stmdev_ctx_t *ctx, uint8_t val);
+int32_t h3lis100dl_axis_z_data_get(const stmdev_ctx_t *ctx, uint8_t *val);
 
 typedef enum {
   H3LIS100DL_ODR_OFF   = 0x00,
@@ -481,33 +481,33 @@ typedef enum {
   H3LIS100DL_ODR_100Hz = 0x11,
   H3LIS100DL_ODR_400Hz = 0x21,
 } h3lis100dl_dr_t;
-int32_t h3lis100dl_data_rate_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_data_rate_set(const stmdev_ctx_t *ctx,
                                  h3lis100dl_dr_t val);
-int32_t h3lis100dl_data_rate_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_data_rate_get(const stmdev_ctx_t *ctx,
                                  h3lis100dl_dr_t *val);
 
 typedef enum {
   H3LIS100DL_NORMAL_MODE      = 0,
   H3LIS100DL_REF_MODE_ENABLE  = 1,
 } h3lis100dl_hpm_t;
-int32_t h3lis100dl_reference_mode_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_reference_mode_set(const stmdev_ctx_t *ctx,
                                       h3lis100dl_hpm_t val);
-int32_t h3lis100dl_reference_mode_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_reference_mode_get(const stmdev_ctx_t *ctx,
                                       h3lis100dl_hpm_t *val);
 
-int32_t h3lis100dl_status_reg_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_status_reg_get(const stmdev_ctx_t *ctx,
                                   h3lis100dl_status_reg_t *val);
 
-int32_t h3lis100dl_flag_data_ready_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_flag_data_ready_get(const stmdev_ctx_t *ctx,
                                        uint8_t *val);
 
-int32_t h3lis100dl_acceleration_raw_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_acceleration_raw_get(const stmdev_ctx_t *ctx,
                                         int16_t *val);
 
-int32_t h3lis100dl_device_id_get(stmdev_ctx_t *ctx, uint8_t *buff);
+int32_t h3lis100dl_device_id_get(const stmdev_ctx_t *ctx, uint8_t *buff);
 
-int32_t h3lis100dl_boot_set(stmdev_ctx_t *ctx, uint8_t val);
-int32_t h3lis100dl_boot_get(stmdev_ctx_t *ctx, uint8_t *val);
+int32_t h3lis100dl_boot_set(const stmdev_ctx_t *ctx, uint8_t val);
+int32_t h3lis100dl_boot_get(const stmdev_ctx_t *ctx, uint8_t *val);
 
 typedef enum {
   H3LIS100DL_CUT_OFF_8Hz   = 0,
@@ -515,9 +515,9 @@ typedef enum {
   H3LIS100DL_CUT_OFF_32Hz  = 2,
   H3LIS100DL_CUT_OFF_64Hz  = 3,
 } h3lis100dl_hpcf_t;
-int32_t h3lis100dl_hp_bandwidth_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_hp_bandwidth_set(const stmdev_ctx_t *ctx,
                                     h3lis100dl_hpcf_t val);
-int32_t h3lis100dl_hp_bandwidth_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_hp_bandwidth_get(const stmdev_ctx_t *ctx,
                                     h3lis100dl_hpcf_t *val);
 
 typedef enum {
@@ -530,25 +530,25 @@ typedef enum {
   H3LIS100DL_HP_ON_INT2_OUT        = 6,
   H3LIS100DL_HP_ON_INT1_OUT        = 5,
 } h3lis100dl_hpen_t;
-int32_t h3lis100dl_hp_path_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_hp_path_set(const stmdev_ctx_t *ctx,
                                h3lis100dl_hpen_t val);
-int32_t h3lis100dl_hp_path_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_hp_path_get(const stmdev_ctx_t *ctx,
                                h3lis100dl_hpen_t *val);
 
-int32_t h3lis100dl_hp_reset_get(stmdev_ctx_t *ctx);
+int32_t h3lis100dl_hp_reset_get(const stmdev_ctx_t *ctx);
 
-int32_t h3lis100dl_hp_reference_value_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_hp_reference_value_set(const stmdev_ctx_t *ctx,
                                           uint8_t val);
-int32_t h3lis100dl_hp_reference_value_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_hp_reference_value_get(const stmdev_ctx_t *ctx,
                                           uint8_t *val);
 
 typedef enum {
   H3LIS100DL_SPI_4_WIRE  = 0,
   H3LIS100DL_SPI_3_WIRE  = 1,
 } h3lis100dl_sim_t;
-int32_t h3lis100dl_spi_mode_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_spi_mode_set(const stmdev_ctx_t *ctx,
                                 h3lis100dl_sim_t val);
-int32_t h3lis100dl_spi_mode_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_spi_mode_get(const stmdev_ctx_t *ctx,
                                 h3lis100dl_sim_t *val);
 
 typedef enum {
@@ -557,18 +557,18 @@ typedef enum {
   H3LIS100DL_PAD1_DRDY               = 2,
   H3LIS100DL_PAD1_BOOT               = 3,
 } h3lis100dl_i1_cfg_t;
-int32_t h3lis100dl_pin_int1_route_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_pin_int1_route_set(const stmdev_ctx_t *ctx,
                                       h3lis100dl_i1_cfg_t val);
-int32_t h3lis100dl_pin_int1_route_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_pin_int1_route_get(const stmdev_ctx_t *ctx,
                                       h3lis100dl_i1_cfg_t *val);
 
 typedef enum {
   H3LIS100DL_INT1_PULSED   = 0,
   H3LIS100DL_INT1_LATCHED  = 1,
 } h3lis100dl_lir1_t;
-int32_t h3lis100dl_int1_notification_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int1_notification_set(const stmdev_ctx_t *ctx,
                                          h3lis100dl_lir1_t val);
-int32_t h3lis100dl_int1_notification_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int1_notification_get(const stmdev_ctx_t *ctx,
                                          h3lis100dl_lir1_t *val);
 
 typedef enum {
@@ -577,36 +577,36 @@ typedef enum {
   H3LIS100DL_PAD2_DRDY               = 2,
   H3LIS100DL_PAD2_BOOT               = 3,
 } h3lis100dl_i2_cfg_t;
-int32_t h3lis100dl_pin_int2_route_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_pin_int2_route_set(const stmdev_ctx_t *ctx,
                                       h3lis100dl_i2_cfg_t val);
-int32_t h3lis100dl_pin_int2_route_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_pin_int2_route_get(const stmdev_ctx_t *ctx,
                                       h3lis100dl_i2_cfg_t *val);
 
 typedef enum {
   H3LIS100DL_INT2_PULSED   = 0,
   H3LIS100DL_INT2_LATCHED  = 1,
 } h3lis100dl_lir2_t;
-int32_t h3lis100dl_int2_notification_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int2_notification_set(const stmdev_ctx_t *ctx,
                                          h3lis100dl_lir2_t val);
-int32_t h3lis100dl_int2_notification_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int2_notification_get(const stmdev_ctx_t *ctx,
                                          h3lis100dl_lir2_t *val);
 
 typedef enum {
   H3LIS100DL_PUSH_PULL   = 0,
   H3LIS100DL_OPEN_DRAIN  = 1,
 } h3lis100dl_pp_od_t;
-int32_t h3lis100dl_pin_mode_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_pin_mode_set(const stmdev_ctx_t *ctx,
                                 h3lis100dl_pp_od_t val);
-int32_t h3lis100dl_pin_mode_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_pin_mode_get(const stmdev_ctx_t *ctx,
                                 h3lis100dl_pp_od_t *val);
 
 typedef enum {
   H3LIS100DL_ACTIVE_HIGH  = 0,
   H3LIS100DL_ACTIVE_LOW   = 1,
 } h3lis100dl_ihl_t;
-int32_t h3lis100dl_pin_polarity_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_pin_polarity_set(const stmdev_ctx_t *ctx,
                                     h3lis100dl_ihl_t val);
-int32_t h3lis100dl_pin_polarity_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_pin_polarity_get(const stmdev_ctx_t *ctx,
                                     h3lis100dl_ihl_t *val);
 
 typedef struct {
@@ -617,28 +617,28 @@ typedef struct {
   uint8_t int1_zlie             : 1;
   uint8_t int1_zhie             : 1;
 } int1_on_th_conf_t;
-int32_t h3lis100dl_int1_on_threshold_conf_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int1_on_threshold_conf_set(const stmdev_ctx_t *ctx,
                                               int1_on_th_conf_t val);
-int32_t h3lis100dl_int1_on_threshold_conf_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int1_on_threshold_conf_get(const stmdev_ctx_t *ctx,
                                               int1_on_th_conf_t *val);
 
 typedef enum {
   H3LIS100DL_INT1_ON_THRESHOLD_OR   = 0,
   H3LIS100DL_INT1_ON_THRESHOLD_AND  = 1,
 } h3lis100dl_int1_aoi_t;
-int32_t h3lis100dl_int1_on_threshold_mode_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int1_on_threshold_mode_set(const stmdev_ctx_t *ctx,
                                               h3lis100dl_int1_aoi_t val);
-int32_t h3lis100dl_int1_on_threshold_mode_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int1_on_threshold_mode_get(const stmdev_ctx_t *ctx,
                                               h3lis100dl_int1_aoi_t *val);
 
-int32_t h3lis100dl_int1_src_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int1_src_get(const stmdev_ctx_t *ctx,
                                 h3lis100dl_int1_src_t *val);
 
-int32_t h3lis100dl_int1_treshold_set(stmdev_ctx_t *ctx, uint8_t val);
-int32_t h3lis100dl_int1_treshold_get(stmdev_ctx_t *ctx, uint8_t *val);
+int32_t h3lis100dl_int1_treshold_set(const stmdev_ctx_t *ctx, uint8_t val);
+int32_t h3lis100dl_int1_treshold_get(const stmdev_ctx_t *ctx, uint8_t *val);
 
-int32_t h3lis100dl_int1_dur_set(stmdev_ctx_t *ctx, uint8_t val);
-int32_t h3lis100dl_int1_dur_get(stmdev_ctx_t *ctx, uint8_t *val);
+int32_t h3lis100dl_int1_dur_set(const stmdev_ctx_t *ctx, uint8_t val);
+int32_t h3lis100dl_int1_dur_get(const stmdev_ctx_t *ctx, uint8_t *val);
 
 typedef struct {
   uint8_t int2_xlie             : 1;
@@ -648,31 +648,31 @@ typedef struct {
   uint8_t int2_zlie             : 1;
   uint8_t int2_zhie             : 1;
 } int2_on_th_conf_t;
-int32_t h3lis100dl_int2_on_threshold_conf_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int2_on_threshold_conf_set(const stmdev_ctx_t *ctx,
                                               int2_on_th_conf_t val);
-int32_t h3lis100dl_int2_on_threshold_conf_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int2_on_threshold_conf_get(const stmdev_ctx_t *ctx,
                                               int2_on_th_conf_t *val);
 
 typedef enum {
   H3LIS100DL_INT2_ON_THRESHOLD_OR   = 0,
   H3LIS100DL_INT2_ON_THRESHOLD_AND  = 1,
 } h3lis100dl_int2_aoi_t;
-int32_t h3lis100dl_int2_on_threshold_mode_set(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int2_on_threshold_mode_set(const stmdev_ctx_t *ctx,
                                               h3lis100dl_int2_aoi_t val);
-int32_t h3lis100dl_int2_on_threshold_mode_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int2_on_threshold_mode_get(const stmdev_ctx_t *ctx,
                                               h3lis100dl_int2_aoi_t *val);
 
-int32_t h3lis100dl_int2_src_get(stmdev_ctx_t *ctx,
+int32_t h3lis100dl_int2_src_get(const stmdev_ctx_t *ctx,
                                 h3lis100dl_int2_src_t *val);
 
-int32_t h3lis100dl_int2_treshold_set(stmdev_ctx_t *ctx, uint8_t val);
-int32_t h3lis100dl_int2_treshold_get(stmdev_ctx_t *ctx, uint8_t *val);
+int32_t h3lis100dl_int2_treshold_set(const stmdev_ctx_t *ctx, uint8_t val);
+int32_t h3lis100dl_int2_treshold_get(const stmdev_ctx_t *ctx, uint8_t *val);
 
-int32_t h3lis100dl_int2_dur_set(stmdev_ctx_t *ctx, uint8_t val);
-int32_t h3lis100dl_int2_dur_get(stmdev_ctx_t *ctx, uint8_t *val);
+int32_t h3lis100dl_int2_dur_set(const stmdev_ctx_t *ctx, uint8_t val);
+int32_t h3lis100dl_int2_dur_get(const stmdev_ctx_t *ctx, uint8_t *val);
 
-int32_t h3lis100dl_wkup_to_sleep_set(stmdev_ctx_t *ctx, uint8_t val);
-int32_t h3lis100dl_wkup_to_sleep_get(stmdev_ctx_t *ctx, uint8_t *val);
+int32_t h3lis100dl_wkup_to_sleep_set(const stmdev_ctx_t *ctx, uint8_t val);
+int32_t h3lis100dl_wkup_to_sleep_get(const stmdev_ctx_t *ctx, uint8_t *val);
 
 /**
   *@}

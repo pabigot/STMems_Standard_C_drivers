@@ -46,7 +46,7 @@
   * @retval       interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis25ba_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t lis25ba_read_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                          uint8_t *data,
                          uint16_t len)
 {
@@ -65,7 +65,7 @@ int32_t lis25ba_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
   * @retval       interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis25ba_write_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t lis25ba_write_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                           uint8_t *data,
                           uint16_t len)
 {
@@ -131,7 +131,7 @@ float_t lis25ba_from_raw_to_mg(int16_t lsb)
   * @retval       interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis25ba_id_get(stmdev_ctx_t *ctx, lis25ba_id_t *val)
+int32_t lis25ba_id_get(const stmdev_ctx_t *ctx, lis25ba_id_t *val)
 {
   int32_t ret = 0;
 
@@ -152,7 +152,7 @@ int32_t lis25ba_id_get(stmdev_ctx_t *ctx, lis25ba_id_t *val)
   * @retval       interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis25ba_bus_mode_set(stmdev_ctx_t *ctx,
+int32_t lis25ba_bus_mode_set(const stmdev_ctx_t *ctx,
                              lis25ba_bus_mode_t *val)
 {
   lis25ba_tdm_ctrl_reg_t tdm_ctrl_reg;
@@ -200,7 +200,7 @@ int32_t lis25ba_bus_mode_set(stmdev_ctx_t *ctx,
   * @retval       interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis25ba_bus_mode_get(stmdev_ctx_t *ctx,
+int32_t lis25ba_bus_mode_get(const stmdev_ctx_t *ctx,
                              lis25ba_bus_mode_t *val)
 {
   lis25ba_tdm_ctrl_reg_t tdm_ctrl_reg;
@@ -236,7 +236,7 @@ int32_t lis25ba_bus_mode_get(stmdev_ctx_t *ctx,
   * @retval       interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis25ba_mode_set(stmdev_ctx_t *ctx, lis25ba_md_t *val)
+int32_t lis25ba_mode_set(const stmdev_ctx_t *ctx, lis25ba_md_t *val)
 {
   lis25ba_axes_ctrl_reg_t axes_ctrl_reg;
   lis25ba_tdm_ctrl_reg_t tdm_ctrl_reg;
@@ -285,7 +285,7 @@ int32_t lis25ba_mode_set(stmdev_ctx_t *ctx, lis25ba_md_t *val)
   * @retval       interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis25ba_mode_get(stmdev_ctx_t *ctx, lis25ba_md_t *val)
+int32_t lis25ba_mode_get(const stmdev_ctx_t *ctx, lis25ba_md_t *val)
 {
   lis25ba_axes_ctrl_reg_t axes_ctrl_reg;
   lis25ba_tdm_ctrl_reg_t tdm_ctrl_reg;
@@ -377,7 +377,7 @@ int32_t lis25ba_data_get(uint16_t *tdm_stream, lis25ba_bus_mode_t *md,
   * @retval          interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis25ba_self_test_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t lis25ba_self_test_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   lis25ba_test_reg_t test_reg;
   int32_t ret;
@@ -402,7 +402,7 @@ int32_t lis25ba_self_test_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval          interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis25ba_self_test_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t lis25ba_self_test_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   lis25ba_test_reg_t test_reg;
   int32_t ret;

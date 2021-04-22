@@ -46,7 +46,7 @@
   * @retval       interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis3dsh_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t lis3dsh_read_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                          uint8_t *data,
                          uint16_t len)
 {
@@ -65,7 +65,7 @@ int32_t lis3dsh_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
   * @retval       interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t lis3dsh_write_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t lis3dsh_write_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                           uint8_t *data,
                           uint16_t len)
 {
@@ -154,7 +154,7 @@ float_t lis3dsh_from_lsb_to_celsius(int8_t lsb)
   * @param  val          ID values.(ptr)
   *
   */
-int32_t lis3dsh_id_get(stmdev_ctx_t *ctx, lis3dsh_id_t *val)
+int32_t lis3dsh_id_get(const stmdev_ctx_t *ctx, lis3dsh_id_t *val)
 {
   uint8_t reg[3];
   int32_t ret;
@@ -172,7 +172,7 @@ int32_t lis3dsh_id_get(stmdev_ctx_t *ctx, lis3dsh_id_t *val)
   * @param  val          configures the bus operating mode.(ptr)
   *
   */
-int32_t lis3dsh_bus_mode_set(stmdev_ctx_t *ctx,
+int32_t lis3dsh_bus_mode_set(const stmdev_ctx_t *ctx,
                              lis3dsh_bus_mode_t *val)
 {
   lis3dsh_ctrl_reg5_t ctrl_reg5;
@@ -196,7 +196,7 @@ int32_t lis3dsh_bus_mode_set(stmdev_ctx_t *ctx,
   * @param  val          retrieves the bus operating.(ptr)
   *
   */
-int32_t lis3dsh_bus_mode_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_bus_mode_get(const stmdev_ctx_t *ctx,
                              lis3dsh_bus_mode_t *val)
 {
   lis3dsh_ctrl_reg5_t ctrl_reg5;
@@ -231,7 +231,7 @@ int32_t lis3dsh_bus_mode_get(stmdev_ctx_t *ctx,
   *                      procedure.(ptr)
   *
   */
-int32_t lis3dsh_init_set(stmdev_ctx_t *ctx, lis3dsh_init_t val)
+int32_t lis3dsh_init_set(const stmdev_ctx_t *ctx, lis3dsh_init_t val)
 {
   lis3dsh_ctrl_reg3_t ctrl_reg3;
   lis3dsh_ctrl_reg4_t ctrl_reg4;
@@ -284,7 +284,7 @@ int32_t lis3dsh_init_set(stmdev_ctx_t *ctx, lis3dsh_init_t val)
   * @param  val          the status of the device.(ptr)
   *
   */
-int32_t lis3dsh_status_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_status_get(const stmdev_ctx_t *ctx,
                            lis3dsh_status_var_t *val)
 {
   lis3dsh_ctrl_reg3_t ctrl_reg3;
@@ -317,7 +317,7 @@ int32_t lis3dsh_status_get(stmdev_ctx_t *ctx,
   * @param  val          the pins hardware signal settings.(ptr)
   *
   */
-int32_t lis3dsh_interrupt_mode_set(stmdev_ctx_t *ctx,
+int32_t lis3dsh_interrupt_mode_set(const stmdev_ctx_t *ctx,
                                    lis3dsh_int_mode_t *val)
 {
   lis3dsh_ctrl_reg3_t ctrl_reg3;
@@ -342,7 +342,7 @@ int32_t lis3dsh_interrupt_mode_set(stmdev_ctx_t *ctx,
   * @param  val          the pins hardware signal settings.(ptr)
   *
   */
-int32_t lis3dsh_interrupt_mode_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_interrupt_mode_get(const stmdev_ctx_t *ctx,
                                    lis3dsh_int_mode_t *val)
 {
   lis3dsh_ctrl_reg3_t ctrl_reg3;
@@ -361,7 +361,7 @@ int32_t lis3dsh_interrupt_mode_get(stmdev_ctx_t *ctx,
   * @param  val          the signals to route on int1 pin.(ptr)
   *
   */
-int32_t lis3dsh_pin_int1_route_set(stmdev_ctx_t *ctx,
+int32_t lis3dsh_pin_int1_route_set(const stmdev_ctx_t *ctx,
                                    lis3dsh_pin_int1_route_t *val)
 {
   lis3dsh_ctrl_reg1_t ctrl_reg1;
@@ -411,7 +411,7 @@ int32_t lis3dsh_pin_int1_route_set(stmdev_ctx_t *ctx,
   * @param  val          the signals that are routed on int1 pin.(ptr)
   *
   */
-int32_t lis3dsh_pin_int1_route_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_pin_int1_route_get(const stmdev_ctx_t *ctx,
                                    lis3dsh_pin_int1_route_t *val)
 {
   lis3dsh_ctrl_reg1_t ctrl_reg1;
@@ -454,7 +454,7 @@ int32_t lis3dsh_pin_int1_route_get(stmdev_ctx_t *ctx,
   * @param  val          the signals to route on int2 pin.(ptr)
   *
   */
-int32_t lis3dsh_pin_int2_route_set(stmdev_ctx_t *ctx,
+int32_t lis3dsh_pin_int2_route_set(const stmdev_ctx_t *ctx,
                                    lis3dsh_pin_int2_route_t *val)
 {
   lis3dsh_ctrl_reg1_t ctrl_reg1;
@@ -502,7 +502,7 @@ int32_t lis3dsh_pin_int2_route_set(stmdev_ctx_t *ctx,
   * @param  val          the signals that are routed on int2 pin.(ptr)
   *
   */
-int32_t lis3dsh_pin_int2_route_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_pin_int2_route_get(const stmdev_ctx_t *ctx,
                                    lis3dsh_pin_int2_route_t *val)
 {
   lis3dsh_ctrl_reg1_t ctrl_reg1;
@@ -539,7 +539,7 @@ int32_t lis3dsh_pin_int2_route_get(stmdev_ctx_t *ctx,
   * @param  val          the status of all the interrupt sources.(ptr)
   *
   */
-int32_t lis3dsh_all_sources_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_all_sources_get(const stmdev_ctx_t *ctx,
                                 lis3dsh_all_sources_t *val)
 {
   lis3dsh_fifo_src_t fifo_src;
@@ -575,7 +575,7 @@ int32_t lis3dsh_all_sources_get(stmdev_ctx_t *ctx,
   *                      the constraints of the device.(ptr)
   *
   */
-int32_t lis3dsh_mode_set(stmdev_ctx_t *ctx, lis3dsh_md_t *val)
+int32_t lis3dsh_mode_set(const stmdev_ctx_t *ctx, lis3dsh_md_t *val)
 {
   lis3dsh_ctrl_reg4_t ctrl_reg4;
   lis3dsh_ctrl_reg5_t ctrl_reg5;
@@ -611,7 +611,7 @@ int32_t lis3dsh_mode_set(stmdev_ctx_t *ctx, lis3dsh_md_t *val)
   * @param  val          get the sensor conversion parameters.(ptr)
   *
   */
-int32_t lis3dsh_mode_get(stmdev_ctx_t *ctx, lis3dsh_md_t *val)
+int32_t lis3dsh_mode_get(const stmdev_ctx_t *ctx, lis3dsh_md_t *val)
 {
   lis3dsh_ctrl_reg4_t ctrl_reg4;
   lis3dsh_ctrl_reg5_t ctrl_reg5;
@@ -706,7 +706,7 @@ int32_t lis3dsh_mode_get(stmdev_ctx_t *ctx, lis3dsh_md_t *val)
   * @param  md      the sensor conversion parameters.(ptr)
   *
   */
-int32_t lis3dsh_data_get(stmdev_ctx_t *ctx, lis3dsh_md_t *md,
+int32_t lis3dsh_data_get(const stmdev_ctx_t *ctx, lis3dsh_md_t *md,
                          lis3dsh_data_t *data)
 {
   uint8_t buff[6];
@@ -773,7 +773,7 @@ int32_t lis3dsh_data_get(stmdev_ctx_t *ctx, lis3dsh_md_t *md,
   * @param  val          Self test mode mode.(ptr)
   *
   */
-int32_t lis3dsh_self_test_set(stmdev_ctx_t *ctx, lis3dsh_st_t val)
+int32_t lis3dsh_self_test_set(const stmdev_ctx_t *ctx, lis3dsh_st_t val)
 {
   lis3dsh_ctrl_reg5_t ctrl_reg5;
   int32_t ret;
@@ -796,7 +796,7 @@ int32_t lis3dsh_self_test_set(stmdev_ctx_t *ctx, lis3dsh_st_t val)
   * @param  val          Self test mode mode.(ptr)
   *
   */
-int32_t lis3dsh_self_test_get(stmdev_ctx_t *ctx, lis3dsh_st_t *val)
+int32_t lis3dsh_self_test_get(const stmdev_ctx_t *ctx, lis3dsh_st_t *val)
 {
   lis3dsh_ctrl_reg5_t ctrl_reg5;
   int32_t ret;

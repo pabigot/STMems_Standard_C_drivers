@@ -46,7 +46,7 @@
   * @retval       interface status (MANDATORY: return 0 -> no Error)
   *
   */
-int32_t iis328dq_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t iis328dq_read_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                           uint8_t *data,
                           uint16_t len)
 {
@@ -65,7 +65,7 @@ int32_t iis328dq_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
   * @retval       interface status (MANDATORY: return 0 -> no Error)
   *
   */
-int32_t iis328dq_write_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t iis328dq_write_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                            uint8_t *data,
                            uint16_t len)
 {
@@ -121,7 +121,7 @@ float_t iis328dq_from_fs8_to_mg(int16_t lsb)
   * @param  val         change the values of xen in reg CTRL_REG1
   *
   */
-int32_t iis328dq_axis_x_data_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_axis_x_data_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_ctrl_reg1_t ctrl_reg1;
   int32_t ret;
@@ -144,7 +144,7 @@ int32_t iis328dq_axis_x_data_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of xen in reg CTRL_REG1
   *
   */
-int32_t iis328dq_axis_x_data_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_axis_x_data_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_ctrl_reg1_t ctrl_reg1;
   int32_t ret;
@@ -161,7 +161,7 @@ int32_t iis328dq_axis_x_data_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  val         change the values of yen in reg CTRL_REG1
   *
   */
-int32_t iis328dq_axis_y_data_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_axis_y_data_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_ctrl_reg1_t ctrl_reg1;
   int32_t ret;
@@ -184,7 +184,7 @@ int32_t iis328dq_axis_y_data_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of yen in reg CTRL_REG1
   *
   */
-int32_t iis328dq_axis_y_data_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_axis_y_data_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_ctrl_reg1_t ctrl_reg1;
   int32_t ret;
@@ -201,7 +201,7 @@ int32_t iis328dq_axis_y_data_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  val         change the values of zen in reg CTRL_REG1
   *
   */
-int32_t iis328dq_axis_z_data_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_axis_z_data_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_ctrl_reg1_t ctrl_reg1;
   int32_t ret;
@@ -224,7 +224,7 @@ int32_t iis328dq_axis_z_data_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of zen in reg CTRL_REG1
   *
   */
-int32_t iis328dq_axis_z_data_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_axis_z_data_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_ctrl_reg1_t ctrl_reg1;
   int32_t ret;
@@ -241,7 +241,7 @@ int32_t iis328dq_axis_z_data_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  val         change the values of dr in reg CTRL_REG1
   *
   */
-int32_t iis328dq_data_rate_set(stmdev_ctx_t *ctx, iis328dq_dr_t val)
+int32_t iis328dq_data_rate_set(const stmdev_ctx_t *ctx, iis328dq_dr_t val)
 {
   iis328dq_ctrl_reg1_t ctrl_reg1;
   int32_t ret;
@@ -265,7 +265,7 @@ int32_t iis328dq_data_rate_set(stmdev_ctx_t *ctx, iis328dq_dr_t val)
   * @param  val         Get the values of dr in reg CTRL_REG1
   *
   */
-int32_t iis328dq_data_rate_get(stmdev_ctx_t *ctx, iis328dq_dr_t *val)
+int32_t iis328dq_data_rate_get(const stmdev_ctx_t *ctx, iis328dq_dr_t *val)
 {
   iis328dq_ctrl_reg1_t ctrl_reg1;
   int32_t ret;
@@ -328,7 +328,7 @@ int32_t iis328dq_data_rate_get(stmdev_ctx_t *ctx, iis328dq_dr_t *val)
   * @param  val         change the values of hpm in reg CTRL_REG2
   *
   */
-int32_t iis328dq_reference_mode_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_reference_mode_set(const stmdev_ctx_t *ctx,
                                     iis328dq_hpm_t val)
 {
   iis328dq_ctrl_reg2_t ctrl_reg2;
@@ -352,7 +352,7 @@ int32_t iis328dq_reference_mode_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of hpm in reg CTRL_REG2
   *
   */
-int32_t iis328dq_reference_mode_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_reference_mode_get(const stmdev_ctx_t *ctx,
                                     iis328dq_hpm_t *val)
 {
   iis328dq_ctrl_reg2_t ctrl_reg2;
@@ -384,7 +384,7 @@ int32_t iis328dq_reference_mode_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of fs in reg CTRL_REG4
   *
   */
-int32_t iis328dq_full_scale_set(stmdev_ctx_t *ctx, iis328dq_fs_t val)
+int32_t iis328dq_full_scale_set(const stmdev_ctx_t *ctx, iis328dq_fs_t val)
 {
   iis328dq_ctrl_reg4_t ctrl_reg4;
   int32_t ret;
@@ -407,7 +407,7 @@ int32_t iis328dq_full_scale_set(stmdev_ctx_t *ctx, iis328dq_fs_t val)
   * @param  val         Get the values of fs in reg CTRL_REG4
   *
   */
-int32_t iis328dq_full_scale_get(stmdev_ctx_t *ctx, iis328dq_fs_t *val)
+int32_t iis328dq_full_scale_get(const stmdev_ctx_t *ctx, iis328dq_fs_t *val)
 {
   iis328dq_ctrl_reg4_t ctrl_reg4;
   int32_t ret;
@@ -442,7 +442,7 @@ int32_t iis328dq_full_scale_get(stmdev_ctx_t *ctx, iis328dq_fs_t *val)
   * @param  val         change the values of bdu in reg CTRL_REG4
   *
   */
-int32_t iis328dq_block_data_update_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_block_data_update_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_ctrl_reg4_t ctrl_reg4;
   int32_t ret;
@@ -465,7 +465,7 @@ int32_t iis328dq_block_data_update_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of bdu in reg CTRL_REG4
   *
   */
-int32_t iis328dq_block_data_update_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_block_data_update_get(const stmdev_ctx_t *ctx,
                                        uint8_t *val)
 {
   iis328dq_ctrl_reg4_t ctrl_reg4;
@@ -483,7 +483,7 @@ int32_t iis328dq_block_data_update_get(stmdev_ctx_t *ctx,
   * @param  val         registers STATUS_REG
   *
   */
-int32_t iis328dq_status_reg_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_status_reg_get(const stmdev_ctx_t *ctx,
                                 iis328dq_status_reg_t *val)
 {
   int32_t ret;
@@ -498,7 +498,7 @@ int32_t iis328dq_status_reg_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of zyxda in reg STATUS_REG
   *
   */
-int32_t iis328dq_flag_data_ready_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_flag_data_ready_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_status_reg_t status_reg;
   int32_t ret;
@@ -528,7 +528,7 @@ int32_t iis328dq_flag_data_ready_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  buff        buffer that stores data read
   *
   */
-int32_t iis328dq_acceleration_raw_get(stmdev_ctx_t *ctx, int16_t *val)
+int32_t iis328dq_acceleration_raw_get(const stmdev_ctx_t *ctx, int16_t *val)
 {
   uint8_t buff[6];
   int32_t ret;
@@ -561,7 +561,7 @@ int32_t iis328dq_acceleration_raw_get(stmdev_ctx_t *ctx, int16_t *val)
   * @param  buff        buffer that stores data read
   *
   */
-int32_t iis328dq_device_id_get(stmdev_ctx_t *ctx, uint8_t *buff)
+int32_t iis328dq_device_id_get(const stmdev_ctx_t *ctx, uint8_t *buff)
 {
   int32_t ret;
   ret = iis328dq_read_reg(ctx, IIS328DQ_WHO_AM_I, buff, 1);
@@ -575,7 +575,7 @@ int32_t iis328dq_device_id_get(stmdev_ctx_t *ctx, uint8_t *buff)
   * @param  val         change the values of boot in reg CTRL_REG2
   *
   */
-int32_t iis328dq_boot_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_boot_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_ctrl_reg2_t ctrl_reg2;
   int32_t ret;
@@ -598,7 +598,7 @@ int32_t iis328dq_boot_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of boot in reg CTRL_REG2
   *
   */
-int32_t iis328dq_boot_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_boot_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_ctrl_reg2_t ctrl_reg2;
   int32_t ret;
@@ -615,7 +615,7 @@ int32_t iis328dq_boot_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  val         change the values of st in reg CTRL_REG4
   *
   */
-int32_t iis328dq_self_test_set(stmdev_ctx_t *ctx, iis328dq_st_t val)
+int32_t iis328dq_self_test_set(const stmdev_ctx_t *ctx, iis328dq_st_t val)
 {
   iis328dq_ctrl_reg4_t ctrl_reg4;
   int32_t ret;
@@ -638,7 +638,7 @@ int32_t iis328dq_self_test_set(stmdev_ctx_t *ctx, iis328dq_st_t val)
   * @param  val         Get the values of st in reg CTRL_REG4
   *
   */
-int32_t iis328dq_self_test_get(stmdev_ctx_t *ctx, iis328dq_st_t *val)
+int32_t iis328dq_self_test_get(const stmdev_ctx_t *ctx, iis328dq_st_t *val)
 {
   iis328dq_ctrl_reg4_t ctrl_reg4;
   int32_t ret;
@@ -673,7 +673,7 @@ int32_t iis328dq_self_test_get(stmdev_ctx_t *ctx, iis328dq_st_t *val)
   * @param  val         change the values of ble in reg CTRL_REG4
   *
   */
-int32_t iis328dq_data_format_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_data_format_set(const stmdev_ctx_t *ctx,
                                  iis328dq_ble_t val)
 {
   iis328dq_ctrl_reg4_t ctrl_reg4;
@@ -697,7 +697,7 @@ int32_t iis328dq_data_format_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of ble in reg CTRL_REG4
   *
   */
-int32_t iis328dq_data_format_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_data_format_get(const stmdev_ctx_t *ctx,
                                  iis328dq_ble_t *val)
 {
   iis328dq_ctrl_reg4_t ctrl_reg4;
@@ -742,7 +742,7 @@ int32_t iis328dq_data_format_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of hpcf in reg CTRL_REG2
   *
   */
-int32_t iis328dq_hp_bandwidth_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_hp_bandwidth_set(const stmdev_ctx_t *ctx,
                                   iis328dq_hpcf_t val)
 {
   iis328dq_ctrl_reg2_t ctrl_reg2;
@@ -766,7 +766,7 @@ int32_t iis328dq_hp_bandwidth_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of hpcf in reg CTRL_REG2
   *
   */
-int32_t iis328dq_hp_bandwidth_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_hp_bandwidth_get(const stmdev_ctx_t *ctx,
                                   iis328dq_hpcf_t *val)
 {
   iis328dq_ctrl_reg2_t ctrl_reg2;
@@ -806,7 +806,7 @@ int32_t iis328dq_hp_bandwidth_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of hpen in reg CTRL_REG2
   *
   */
-int32_t iis328dq_hp_path_set(stmdev_ctx_t *ctx, iis328dq_hpen_t val)
+int32_t iis328dq_hp_path_set(const stmdev_ctx_t *ctx, iis328dq_hpen_t val)
 {
   iis328dq_ctrl_reg2_t ctrl_reg2;
   int32_t ret;
@@ -830,7 +830,7 @@ int32_t iis328dq_hp_path_set(stmdev_ctx_t *ctx, iis328dq_hpen_t val)
   * @param  val         Get the values of hpen in reg CTRL_REG2
   *
   */
-int32_t iis328dq_hp_path_get(stmdev_ctx_t *ctx, iis328dq_hpen_t *val)
+int32_t iis328dq_hp_path_get(const stmdev_ctx_t *ctx, iis328dq_hpen_t *val)
 {
   iis328dq_ctrl_reg2_t ctrl_reg2;
   int32_t ret;
@@ -889,7 +889,7 @@ int32_t iis328dq_hp_path_get(stmdev_ctx_t *ctx, iis328dq_hpen_t *val)
   * @param  ctx         read / write interface definitions(ptr)
   *
   */
-int32_t iis328dq_hp_reset_get(stmdev_ctx_t *ctx)
+int32_t iis328dq_hp_reset_get(const stmdev_ctx_t *ctx)
 {
   uint8_t dummy;
   int32_t ret;
@@ -905,7 +905,7 @@ int32_t iis328dq_hp_reset_get(stmdev_ctx_t *ctx)
   * @param  val         change the values of ref in reg REFERENCE
   *
   */
-int32_t iis328dq_hp_reference_value_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_hp_reference_value_set(const stmdev_ctx_t *ctx,
                                         uint8_t val)
 {
   int32_t ret;
@@ -920,7 +920,7 @@ int32_t iis328dq_hp_reference_value_set(stmdev_ctx_t *ctx,
   * @param  val         change the values of ref in reg REFERENCE
   *
   */
-int32_t iis328dq_hp_reference_value_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_hp_reference_value_get(const stmdev_ctx_t *ctx,
                                         uint8_t *val)
 {
   int32_t ret;
@@ -948,7 +948,7 @@ int32_t iis328dq_hp_reference_value_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of sim in reg CTRL_REG4
   *
   */
-int32_t iis328dq_spi_mode_set(stmdev_ctx_t *ctx, iis328dq_sim_t val)
+int32_t iis328dq_spi_mode_set(const stmdev_ctx_t *ctx, iis328dq_sim_t val)
 {
   iis328dq_ctrl_reg4_t ctrl_reg4;
   int32_t ret;
@@ -971,7 +971,7 @@ int32_t iis328dq_spi_mode_set(stmdev_ctx_t *ctx, iis328dq_sim_t val)
   * @param  val         Get the values of sim in reg CTRL_REG4
   *
   */
-int32_t iis328dq_spi_mode_get(stmdev_ctx_t *ctx, iis328dq_sim_t *val)
+int32_t iis328dq_spi_mode_get(const stmdev_ctx_t *ctx, iis328dq_sim_t *val)
 {
   iis328dq_ctrl_reg4_t ctrl_reg4;
   int32_t ret;
@@ -1015,7 +1015,7 @@ int32_t iis328dq_spi_mode_get(stmdev_ctx_t *ctx, iis328dq_sim_t *val)
   * @param  val         change the values of i1_cfg in reg CTRL_REG3
   *
   */
-int32_t iis328dq_pin_int1_route_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_pin_int1_route_set(const stmdev_ctx_t *ctx,
                                     iis328dq_i1_cfg_t val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1039,7 +1039,7 @@ int32_t iis328dq_pin_int1_route_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of i1_cfg in reg CTRL_REG3
   *
   */
-int32_t iis328dq_pin_int1_route_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_pin_int1_route_get(const stmdev_ctx_t *ctx,
                                     iis328dq_i1_cfg_t *val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1080,7 +1080,7 @@ int32_t iis328dq_pin_int1_route_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of lir1 in reg CTRL_REG3
   *
   */
-int32_t iis328dq_int1_notification_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_int1_notification_set(const stmdev_ctx_t *ctx,
                                        iis328dq_lir1_t val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1105,7 +1105,7 @@ int32_t iis328dq_int1_notification_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of lir1 in reg CTRL_REG3
   *
   */
-int32_t iis328dq_int1_notification_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int1_notification_get(const stmdev_ctx_t *ctx,
                                        iis328dq_lir1_t *val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1137,7 +1137,7 @@ int32_t iis328dq_int1_notification_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of i2_cfg in reg CTRL_REG3
   *
   */
-int32_t iis328dq_pin_int2_route_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_pin_int2_route_set(const stmdev_ctx_t *ctx,
                                     iis328dq_i2_cfg_t val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1161,7 +1161,7 @@ int32_t iis328dq_pin_int2_route_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of i2_cfg in reg CTRL_REG3
   *
   */
-int32_t iis328dq_pin_int2_route_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_pin_int2_route_get(const stmdev_ctx_t *ctx,
                                     iis328dq_i2_cfg_t *val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1202,7 +1202,7 @@ int32_t iis328dq_pin_int2_route_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of lir2 in reg CTRL_REG3
   *
   */
-int32_t iis328dq_int2_notification_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_int2_notification_set(const stmdev_ctx_t *ctx,
                                        iis328dq_lir2_t val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1227,7 +1227,7 @@ int32_t iis328dq_int2_notification_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of lir2 in reg CTRL_REG3
   *
   */
-int32_t iis328dq_int2_notification_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int2_notification_get(const stmdev_ctx_t *ctx,
                                        iis328dq_lir2_t *val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1259,7 +1259,7 @@ int32_t iis328dq_int2_notification_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of pp_od in reg CTRL_REG3
   *
   */
-int32_t iis328dq_pin_mode_set(stmdev_ctx_t *ctx, iis328dq_pp_od_t val)
+int32_t iis328dq_pin_mode_set(const stmdev_ctx_t *ctx, iis328dq_pp_od_t val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
   int32_t ret;
@@ -1282,7 +1282,7 @@ int32_t iis328dq_pin_mode_set(stmdev_ctx_t *ctx, iis328dq_pp_od_t val)
   * @param  val         Get the values of pp_od in reg CTRL_REG3
   *
   */
-int32_t iis328dq_pin_mode_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_pin_mode_get(const stmdev_ctx_t *ctx,
                               iis328dq_pp_od_t *val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1314,7 +1314,7 @@ int32_t iis328dq_pin_mode_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of ihl in reg CTRL_REG3
   *
   */
-int32_t iis328dq_pin_polarity_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_pin_polarity_set(const stmdev_ctx_t *ctx,
                                   iis328dq_ihl_t val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1338,7 +1338,7 @@ int32_t iis328dq_pin_polarity_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of ihl in reg CTRL_REG3
   *
   */
-int32_t iis328dq_pin_polarity_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_pin_polarity_get(const stmdev_ctx_t *ctx,
                                   iis328dq_ihl_t *val)
 {
   iis328dq_ctrl_reg3_t ctrl_reg3;
@@ -1383,7 +1383,7 @@ int32_t iis328dq_pin_polarity_get(stmdev_ctx_t *ctx,
   * @param  val         enable sign and axis for interrupt on threshold
   *
   */
-int32_t iis328dq_int1_on_threshold_conf_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_int1_on_threshold_conf_set(const stmdev_ctx_t *ctx,
                                             int1_on_th_conf_t val)
 {
   iis328dq_int1_cfg_t int1_cfg;
@@ -1412,7 +1412,7 @@ int32_t iis328dq_int1_on_threshold_conf_set(stmdev_ctx_t *ctx,
   * @param  val         enable sign and axis for interrupt on threshold
   *
   */
-int32_t iis328dq_int1_on_threshold_conf_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int1_on_threshold_conf_get(const stmdev_ctx_t *ctx,
                                             int1_on_th_conf_t *val)
 {
   iis328dq_int1_cfg_t int1_cfg;
@@ -1435,7 +1435,7 @@ int32_t iis328dq_int1_on_threshold_conf_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of aoi in reg INT1_CFG
   *
   */
-int32_t iis328dq_int1_on_threshold_mode_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_int1_on_threshold_mode_set(const stmdev_ctx_t *ctx,
                                             iis328dq_int1_aoi_t val)
 {
   iis328dq_int1_cfg_t int1_cfg;
@@ -1459,7 +1459,7 @@ int32_t iis328dq_int1_on_threshold_mode_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of aoi in reg INT1_CFG
   *
   */
-int32_t iis328dq_int1_on_threshold_mode_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int1_on_threshold_mode_get(const stmdev_ctx_t *ctx,
                                             iis328dq_int1_aoi_t *val)
 {
   iis328dq_int1_cfg_t int1_cfg;
@@ -1491,7 +1491,7 @@ int32_t iis328dq_int1_on_threshold_mode_get(stmdev_ctx_t *ctx,
   * @param  val         registers INT1_SRC
   *
   */
-int32_t iis328dq_int1_src_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int1_src_get(const stmdev_ctx_t *ctx,
                               iis328dq_int1_src_t *val)
 {
   int32_t ret;
@@ -1506,7 +1506,7 @@ int32_t iis328dq_int1_src_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of ths in reg INT1_THS
   *
   */
-int32_t iis328dq_int1_treshold_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_int1_treshold_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_int1_ths_t int1_ths;
   int32_t ret;
@@ -1529,7 +1529,7 @@ int32_t iis328dq_int1_treshold_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of ths in reg INT1_THS
   *
   */
-int32_t iis328dq_int1_treshold_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_int1_treshold_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_int1_ths_t int1_ths;
   int32_t ret;
@@ -1546,7 +1546,7 @@ int32_t iis328dq_int1_treshold_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  val         change the values of d in reg INT1_DURATION
   *
   */
-int32_t iis328dq_int1_dur_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_int1_dur_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_int1_duration_t int1_duration;
   int32_t ret;
@@ -1569,7 +1569,7 @@ int32_t iis328dq_int1_dur_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of d in reg INT1_DURATION
   *
   */
-int32_t iis328dq_int1_dur_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_int1_dur_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_int1_duration_t int1_duration;
   int32_t ret;
@@ -1586,7 +1586,7 @@ int32_t iis328dq_int1_dur_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  val         enable sign and axis for interrupt on threshold
   *
   */
-int32_t iis328dq_int2_on_threshold_conf_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_int2_on_threshold_conf_set(const stmdev_ctx_t *ctx,
                                             int2_on_th_conf_t val)
 {
   iis328dq_int2_cfg_t int2_cfg;
@@ -1615,7 +1615,7 @@ int32_t iis328dq_int2_on_threshold_conf_set(stmdev_ctx_t *ctx,
   * @param  val         enable sign and axis for interrupt on threshold
   *
   */
-int32_t iis328dq_int2_on_threshold_conf_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int2_on_threshold_conf_get(const stmdev_ctx_t *ctx,
                                             int2_on_th_conf_t *val)
 {
   iis328dq_int2_cfg_t int2_cfg;
@@ -1638,7 +1638,7 @@ int32_t iis328dq_int2_on_threshold_conf_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of aoi in reg INT2_CFG
   *
   */
-int32_t iis328dq_int2_on_threshold_mode_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_int2_on_threshold_mode_set(const stmdev_ctx_t *ctx,
                                             iis328dq_int2_aoi_t val)
 {
   iis328dq_int2_cfg_t int2_cfg;
@@ -1662,7 +1662,7 @@ int32_t iis328dq_int2_on_threshold_mode_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of aoi in reg INT2_CFG
   *
   */
-int32_t iis328dq_int2_on_threshold_mode_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int2_on_threshold_mode_get(const stmdev_ctx_t *ctx,
                                             iis328dq_int2_aoi_t *val)
 {
   iis328dq_int2_cfg_t int2_cfg;
@@ -1694,7 +1694,7 @@ int32_t iis328dq_int2_on_threshold_mode_get(stmdev_ctx_t *ctx,
   * @param  val         registers INT2_SRC
   *
   */
-int32_t iis328dq_int2_src_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int2_src_get(const stmdev_ctx_t *ctx,
                               iis328dq_int2_src_t *val)
 {
   int32_t ret;
@@ -1709,7 +1709,7 @@ int32_t iis328dq_int2_src_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of ths in reg INT2_THS
   *
   */
-int32_t iis328dq_int2_treshold_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_int2_treshold_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_int2_ths_t int2_ths;
   int32_t ret;
@@ -1732,7 +1732,7 @@ int32_t iis328dq_int2_treshold_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of ths in reg INT2_THS
   *
   */
-int32_t iis328dq_int2_treshold_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_int2_treshold_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_int2_ths_t int2_ths;
   int32_t ret;
@@ -1749,7 +1749,7 @@ int32_t iis328dq_int2_treshold_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  val         change the values of d in reg INT2_DURATION
   *
   */
-int32_t iis328dq_int2_dur_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_int2_dur_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_int2_duration_t int2_duration;
   int32_t ret;
@@ -1772,7 +1772,7 @@ int32_t iis328dq_int2_dur_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of d in reg INT2_DURATION
   *
   */
-int32_t iis328dq_int2_dur_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_int2_dur_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_int2_duration_t int2_duration;
   int32_t ret;
@@ -1802,7 +1802,7 @@ int32_t iis328dq_int2_dur_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  val         change the values of turnon in reg CTRL_REG5
   *
   */
-int32_t iis328dq_wkup_to_sleep_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_wkup_to_sleep_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_ctrl_reg5_t ctrl_reg5;
   int32_t ret;
@@ -1825,7 +1825,7 @@ int32_t iis328dq_wkup_to_sleep_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of turnon in reg CTRL_REG5
   *
   */
-int32_t iis328dq_wkup_to_sleep_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_wkup_to_sleep_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_ctrl_reg5_t ctrl_reg5;
   int32_t ret;
@@ -1855,7 +1855,7 @@ int32_t iis328dq_wkup_to_sleep_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  val         change the values of 6d in reg INT1_CFG
   *
   */
-int32_t iis328dq_int1_6d_mode_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_int1_6d_mode_set(const stmdev_ctx_t *ctx,
                                   iis328dq_int1_6d_t val)
 {
   iis328dq_int1_cfg_t int1_cfg;
@@ -1880,7 +1880,7 @@ int32_t iis328dq_int1_6d_mode_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of 6d in reg INT1_CFG
   *
   */
-int32_t iis328dq_int1_6d_mode_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int1_6d_mode_get(const stmdev_ctx_t *ctx,
                                   iis328dq_int1_6d_t *val)
 {
   iis328dq_int1_cfg_t int1_cfg;
@@ -1916,7 +1916,7 @@ int32_t iis328dq_int1_6d_mode_get(stmdev_ctx_t *ctx,
   * @param  val         registers INT1_SRC
   *
   */
-int32_t iis328dq_int1_6d_src_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int1_6d_src_get(const stmdev_ctx_t *ctx,
                                  iis328dq_int1_src_t *val)
 {
   int32_t ret;
@@ -1931,7 +1931,7 @@ int32_t iis328dq_int1_6d_src_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of ths in reg INT1_THS
   *
   */
-int32_t iis328dq_int1_6d_treshold_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_int1_6d_treshold_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_int1_ths_t int1_ths;
   int32_t ret;
@@ -1954,7 +1954,7 @@ int32_t iis328dq_int1_6d_treshold_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of ths in reg INT1_THS
   *
   */
-int32_t iis328dq_int1_6d_treshold_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_int1_6d_treshold_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_int1_ths_t int1_ths;
   int32_t ret;
@@ -1971,7 +1971,7 @@ int32_t iis328dq_int1_6d_treshold_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @param  val         change the values of 6d in reg INT2_CFG
   *
   */
-int32_t iis328dq_int2_6d_mode_set(stmdev_ctx_t *ctx,
+int32_t iis328dq_int2_6d_mode_set(const stmdev_ctx_t *ctx,
                                   iis328dq_int2_6d_t val)
 {
   iis328dq_int2_cfg_t int2_cfg;
@@ -1996,7 +1996,7 @@ int32_t iis328dq_int2_6d_mode_set(stmdev_ctx_t *ctx,
   * @param  val         Get the values of 6d in reg INT2_CFG
   *
   */
-int32_t iis328dq_int2_6d_mode_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int2_6d_mode_get(const stmdev_ctx_t *ctx,
                                   iis328dq_int2_6d_t *val)
 {
   iis328dq_int2_cfg_t int2_cfg;
@@ -2032,7 +2032,7 @@ int32_t iis328dq_int2_6d_mode_get(stmdev_ctx_t *ctx,
   * @param  val         registers INT2_SRC
   *
   */
-int32_t iis328dq_int2_6d_src_get(stmdev_ctx_t *ctx,
+int32_t iis328dq_int2_6d_src_get(const stmdev_ctx_t *ctx,
                                  iis328dq_int2_src_t *val)
 {
   int32_t ret;
@@ -2047,7 +2047,7 @@ int32_t iis328dq_int2_6d_src_get(stmdev_ctx_t *ctx,
   * @param  val         change the values of ths in reg INT2_THS
   *
   */
-int32_t iis328dq_int2_6d_treshold_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t iis328dq_int2_6d_treshold_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   iis328dq_int2_ths_t int2_ths;
   int32_t ret;
@@ -2070,7 +2070,7 @@ int32_t iis328dq_int2_6d_treshold_set(stmdev_ctx_t *ctx, uint8_t val)
   * @param  val         change the values of ths in reg INT2_THS
   *
   */
-int32_t iis328dq_int2_6d_treshold_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t iis328dq_int2_6d_treshold_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   iis328dq_int2_ths_t int2_ths;
   int32_t ret;

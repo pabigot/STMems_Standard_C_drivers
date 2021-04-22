@@ -46,7 +46,7 @@
   * @retval       interface status (MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t lis2mdl_read_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                          uint8_t *data,
                          uint16_t len)
 {
@@ -65,7 +65,7 @@ int32_t lis2mdl_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
   * @retval       interface status (MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_write_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t lis2mdl_write_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                           uint8_t *data,
                           uint16_t len)
 {
@@ -120,7 +120,7 @@ float_t lis2mdl_from_lsb_to_celsius(int16_t lsb)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_mag_user_offset_set(stmdev_ctx_t *ctx, int16_t *val)
+int32_t lis2mdl_mag_user_offset_set(const stmdev_ctx_t *ctx, int16_t *val)
 {
   uint8_t buff[6];
   int32_t ret;
@@ -146,7 +146,7 @@ int32_t lis2mdl_mag_user_offset_set(stmdev_ctx_t *ctx, int16_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_mag_user_offset_get(stmdev_ctx_t *ctx, int16_t *val)
+int32_t lis2mdl_mag_user_offset_get(const stmdev_ctx_t *ctx, int16_t *val)
 {
   uint8_t buff[6];
   int32_t ret;
@@ -168,7 +168,7 @@ int32_t lis2mdl_mag_user_offset_get(stmdev_ctx_t *ctx, int16_t *val)
   * @retval        interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_operating_mode_set(stmdev_ctx_t *ctx,
+int32_t lis2mdl_operating_mode_set(const stmdev_ctx_t *ctx,
                                    lis2mdl_md_t val)
 {
   lis2mdl_cfg_reg_a_t reg;
@@ -191,7 +191,7 @@ int32_t lis2mdl_operating_mode_set(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_operating_mode_get(stmdev_ctx_t *ctx,
+int32_t lis2mdl_operating_mode_get(const stmdev_ctx_t *ctx,
                                    lis2mdl_md_t *val)
 {
   lis2mdl_cfg_reg_a_t reg;
@@ -227,7 +227,7 @@ int32_t lis2mdl_operating_mode_get(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_data_rate_set(stmdev_ctx_t *ctx, lis2mdl_odr_t val)
+int32_t lis2mdl_data_rate_set(const stmdev_ctx_t *ctx, lis2mdl_odr_t val)
 {
   lis2mdl_cfg_reg_a_t reg;
   int32_t ret;
@@ -249,7 +249,7 @@ int32_t lis2mdl_data_rate_set(stmdev_ctx_t *ctx, lis2mdl_odr_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_data_rate_get(stmdev_ctx_t *ctx, lis2mdl_odr_t *val)
+int32_t lis2mdl_data_rate_get(const stmdev_ctx_t *ctx, lis2mdl_odr_t *val)
 {
   lis2mdl_cfg_reg_a_t reg;
   int32_t ret;
@@ -288,7 +288,7 @@ int32_t lis2mdl_data_rate_get(stmdev_ctx_t *ctx, lis2mdl_odr_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_power_mode_set(stmdev_ctx_t *ctx, lis2mdl_lp_t val)
+int32_t lis2mdl_power_mode_set(const stmdev_ctx_t *ctx, lis2mdl_lp_t val)
 {
   lis2mdl_cfg_reg_a_t reg;
   int32_t ret;
@@ -310,7 +310,7 @@ int32_t lis2mdl_power_mode_set(stmdev_ctx_t *ctx, lis2mdl_lp_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_power_mode_get(stmdev_ctx_t *ctx, lis2mdl_lp_t *val)
+int32_t lis2mdl_power_mode_get(const stmdev_ctx_t *ctx, lis2mdl_lp_t *val)
 {
   lis2mdl_cfg_reg_a_t reg;
   int32_t ret;
@@ -341,7 +341,7 @@ int32_t lis2mdl_power_mode_get(stmdev_ctx_t *ctx, lis2mdl_lp_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_offset_temp_comp_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t lis2mdl_offset_temp_comp_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   lis2mdl_cfg_reg_a_t reg;
   int32_t ret;
@@ -363,7 +363,7 @@ int32_t lis2mdl_offset_temp_comp_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_offset_temp_comp_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t lis2mdl_offset_temp_comp_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   lis2mdl_cfg_reg_a_t reg;
   int32_t ret;
@@ -380,7 +380,7 @@ int32_t lis2mdl_offset_temp_comp_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_low_pass_bandwidth_set(stmdev_ctx_t *ctx,
+int32_t lis2mdl_low_pass_bandwidth_set(const stmdev_ctx_t *ctx,
                                        lis2mdl_lpf_t val)
 {
   lis2mdl_cfg_reg_b_t reg;
@@ -403,7 +403,7 @@ int32_t lis2mdl_low_pass_bandwidth_set(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_low_pass_bandwidth_get(stmdev_ctx_t *ctx,
+int32_t lis2mdl_low_pass_bandwidth_get(const stmdev_ctx_t *ctx,
                                        lis2mdl_lpf_t *val)
 {
   lis2mdl_cfg_reg_b_t reg;
@@ -435,7 +435,7 @@ int32_t lis2mdl_low_pass_bandwidth_get(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_set_rst_mode_set(stmdev_ctx_t *ctx,
+int32_t lis2mdl_set_rst_mode_set(const stmdev_ctx_t *ctx,
                                  lis2mdl_set_rst_t val)
 {
   lis2mdl_cfg_reg_b_t reg;
@@ -458,7 +458,7 @@ int32_t lis2mdl_set_rst_mode_set(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_set_rst_mode_get(stmdev_ctx_t *ctx,
+int32_t lis2mdl_set_rst_mode_get(const stmdev_ctx_t *ctx,
                                  lis2mdl_set_rst_t *val)
 {
   lis2mdl_cfg_reg_b_t reg;
@@ -498,7 +498,7 @@ int32_t lis2mdl_set_rst_mode_get(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_set_rst_sensor_single_set(stmdev_ctx_t *ctx,
+int32_t lis2mdl_set_rst_sensor_single_set(const stmdev_ctx_t *ctx,
                                           uint8_t val)
 {
   lis2mdl_cfg_reg_b_t reg;
@@ -525,7 +525,7 @@ int32_t lis2mdl_set_rst_sensor_single_set(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_set_rst_sensor_single_get(stmdev_ctx_t *ctx,
+int32_t lis2mdl_set_rst_sensor_single_get(const stmdev_ctx_t *ctx,
                                           uint8_t *val)
 {
   lis2mdl_cfg_reg_b_t reg;
@@ -543,7 +543,7 @@ int32_t lis2mdl_set_rst_sensor_single_get(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_block_data_update_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t lis2mdl_block_data_update_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -565,7 +565,7 @@ int32_t lis2mdl_block_data_update_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_block_data_update_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t lis2mdl_block_data_update_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -582,7 +582,7 @@ int32_t lis2mdl_block_data_update_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_mag_data_ready_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t lis2mdl_mag_data_ready_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   lis2mdl_status_reg_t reg;
   int32_t ret;
@@ -599,7 +599,7 @@ int32_t lis2mdl_mag_data_ready_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_mag_data_ovr_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t lis2mdl_mag_data_ovr_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   lis2mdl_status_reg_t reg;
   int32_t ret;
@@ -616,7 +616,7 @@ int32_t lis2mdl_mag_data_ovr_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_magnetic_raw_get(stmdev_ctx_t *ctx, int16_t *val)
+int32_t lis2mdl_magnetic_raw_get(const stmdev_ctx_t *ctx, int16_t *val)
 {
   uint8_t buff[6];
   int32_t ret;
@@ -638,7 +638,7 @@ int32_t lis2mdl_magnetic_raw_get(stmdev_ctx_t *ctx, int16_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_temperature_raw_get(stmdev_ctx_t *ctx,  int16_t *val)
+int32_t lis2mdl_temperature_raw_get(const stmdev_ctx_t *ctx,  int16_t *val)
 {
   uint8_t buff[2];
   int32_t ret;
@@ -668,7 +668,7 @@ int32_t lis2mdl_temperature_raw_get(stmdev_ctx_t *ctx,  int16_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_device_id_get(stmdev_ctx_t *ctx, uint8_t *buff)
+int32_t lis2mdl_device_id_get(const stmdev_ctx_t *ctx, uint8_t *buff)
 {
   int32_t ret;
   ret = lis2mdl_read_reg(ctx, LIS2MDL_WHO_AM_I, buff, 1);
@@ -683,7 +683,7 @@ int32_t lis2mdl_device_id_get(stmdev_ctx_t *ctx, uint8_t *buff)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_reset_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t lis2mdl_reset_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   lis2mdl_cfg_reg_a_t reg;
   int32_t ret;
@@ -705,7 +705,7 @@ int32_t lis2mdl_reset_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_reset_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t lis2mdl_reset_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   lis2mdl_cfg_reg_a_t reg;
   int32_t ret;
@@ -722,7 +722,7 @@ int32_t lis2mdl_reset_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_boot_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t lis2mdl_boot_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   lis2mdl_cfg_reg_a_t reg;
   int32_t ret;
@@ -744,7 +744,7 @@ int32_t lis2mdl_boot_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_boot_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t lis2mdl_boot_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   lis2mdl_cfg_reg_a_t reg;
   int32_t ret;
@@ -761,7 +761,7 @@ int32_t lis2mdl_boot_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_self_test_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t lis2mdl_self_test_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -783,7 +783,7 @@ int32_t lis2mdl_self_test_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_self_test_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t lis2mdl_self_test_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -800,7 +800,7 @@ int32_t lis2mdl_self_test_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_data_format_set(stmdev_ctx_t *ctx, lis2mdl_ble_t val)
+int32_t lis2mdl_data_format_set(const stmdev_ctx_t *ctx, lis2mdl_ble_t val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -822,7 +822,7 @@ int32_t lis2mdl_data_format_set(stmdev_ctx_t *ctx, lis2mdl_ble_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_data_format_get(stmdev_ctx_t *ctx, lis2mdl_ble_t *val)
+int32_t lis2mdl_data_format_get(const stmdev_ctx_t *ctx, lis2mdl_ble_t *val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -853,7 +853,7 @@ int32_t lis2mdl_data_format_get(stmdev_ctx_t *ctx, lis2mdl_ble_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_status_get(stmdev_ctx_t *ctx,
+int32_t lis2mdl_status_get(const stmdev_ctx_t *ctx,
                            lis2mdl_status_reg_t *val)
 {
   int32_t ret;
@@ -882,7 +882,7 @@ int32_t lis2mdl_status_get(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_offset_int_conf_set(stmdev_ctx_t *ctx,
+int32_t lis2mdl_offset_int_conf_set(const stmdev_ctx_t *ctx,
                                     lis2mdl_int_on_dataoff_t val)
 {
   lis2mdl_cfg_reg_b_t reg;
@@ -906,7 +906,7 @@ int32_t lis2mdl_offset_int_conf_set(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_offset_int_conf_get(stmdev_ctx_t *ctx,
+int32_t lis2mdl_offset_int_conf_get(const stmdev_ctx_t *ctx,
                                     lis2mdl_int_on_dataoff_t *val)
 {
   lis2mdl_cfg_reg_b_t reg;
@@ -938,7 +938,7 @@ int32_t lis2mdl_offset_int_conf_get(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_drdy_on_pin_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t lis2mdl_drdy_on_pin_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -960,7 +960,7 @@ int32_t lis2mdl_drdy_on_pin_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_drdy_on_pin_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t lis2mdl_drdy_on_pin_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -977,7 +977,7 @@ int32_t lis2mdl_drdy_on_pin_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_int_on_pin_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t lis2mdl_int_on_pin_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -999,7 +999,7 @@ int32_t lis2mdl_int_on_pin_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_int_on_pin_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t lis2mdl_int_on_pin_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -1016,7 +1016,7 @@ int32_t lis2mdl_int_on_pin_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_int_gen_conf_set(stmdev_ctx_t *ctx,
+int32_t lis2mdl_int_gen_conf_set(const stmdev_ctx_t *ctx,
                                  lis2mdl_int_crtl_reg_t *val)
 {
   int32_t ret;
@@ -1033,7 +1033,7 @@ int32_t lis2mdl_int_gen_conf_set(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_int_gen_conf_get(stmdev_ctx_t *ctx,
+int32_t lis2mdl_int_gen_conf_get(const stmdev_ctx_t *ctx,
                                  lis2mdl_int_crtl_reg_t *val)
 {
   int32_t ret;
@@ -1049,7 +1049,7 @@ int32_t lis2mdl_int_gen_conf_get(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_int_gen_source_get(stmdev_ctx_t *ctx,
+int32_t lis2mdl_int_gen_source_get(const stmdev_ctx_t *ctx,
                                    lis2mdl_int_source_reg_t *val)
 {
   int32_t ret;
@@ -1068,7 +1068,7 @@ int32_t lis2mdl_int_gen_source_get(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_int_gen_treshold_set(stmdev_ctx_t *ctx, uint16_t val)
+int32_t lis2mdl_int_gen_treshold_set(const stmdev_ctx_t *ctx, uint16_t val)
 {
   uint8_t buff[2];
   int32_t ret;
@@ -1088,7 +1088,7 @@ int32_t lis2mdl_int_gen_treshold_set(stmdev_ctx_t *ctx, uint16_t val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_int_gen_treshold_get(stmdev_ctx_t *ctx, uint16_t *val)
+int32_t lis2mdl_int_gen_treshold_get(const stmdev_ctx_t *ctx, uint16_t *val)
 {
   uint8_t buff[2];
   int32_t ret;
@@ -1119,7 +1119,7 @@ int32_t lis2mdl_int_gen_treshold_get(stmdev_ctx_t *ctx, uint16_t *val)
   * @retval          interface status (MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_spi_mode_set(stmdev_ctx_t *ctx, lis2mdl_sim_t val)
+int32_t lis2mdl_spi_mode_set(const stmdev_ctx_t *ctx, lis2mdl_sim_t val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -1141,7 +1141,7 @@ int32_t lis2mdl_spi_mode_set(stmdev_ctx_t *ctx, lis2mdl_sim_t val)
   * @retval          interface status (MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_spi_mode_get(stmdev_ctx_t *ctx, lis2mdl_sim_t *val)
+int32_t lis2mdl_spi_mode_get(const stmdev_ctx_t *ctx, lis2mdl_sim_t *val)
 {
   lis2mdl_cfg_reg_c_t reg;
   int32_t ret;
@@ -1172,7 +1172,7 @@ int32_t lis2mdl_spi_mode_get(stmdev_ctx_t *ctx, lis2mdl_sim_t *val)
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_i2c_interface_set(stmdev_ctx_t *ctx,
+int32_t lis2mdl_i2c_interface_set(const stmdev_ctx_t *ctx,
                                   lis2mdl_i2c_dis_t val)
 {
   lis2mdl_cfg_reg_c_t reg;
@@ -1195,7 +1195,7 @@ int32_t lis2mdl_i2c_interface_set(stmdev_ctx_t *ctx,
   * @retval       interface status.(MANDATORY: return 0 -> no Error)
   *
   */
-int32_t lis2mdl_i2c_interface_get(stmdev_ctx_t *ctx,
+int32_t lis2mdl_i2c_interface_get(const stmdev_ctx_t *ctx,
                                   lis2mdl_i2c_dis_t *val)
 {
   lis2mdl_cfg_reg_c_t reg;

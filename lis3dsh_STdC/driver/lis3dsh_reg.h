@@ -699,10 +699,10 @@ typedef union {
   *
   */
 
-int32_t lis3dsh_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t lis3dsh_read_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                          uint8_t *data,
                          uint16_t len);
-int32_t lis3dsh_write_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t lis3dsh_write_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                           uint8_t *data,
                           uint16_t len);
 
@@ -718,15 +718,15 @@ typedef struct {
   uint8_t info1;
   uint8_t info2;
 } lis3dsh_id_t;
-int32_t lis3dsh_id_get(stmdev_ctx_t *ctx, lis3dsh_id_t *val);
+int32_t lis3dsh_id_get(const stmdev_ctx_t *ctx, lis3dsh_id_t *val);
 
 typedef enum {
   LIS3DSH_SEL_BY_HW   = 0x00, /* bus mode select by HW (SPI 3W disable) */
   LIS3DSH_SPI_3W      = 0x01, /* SDO / SDI share the same pin */
 } lis3dsh_bus_mode_t;
-int32_t lis3dsh_bus_mode_set(stmdev_ctx_t *ctx,
+int32_t lis3dsh_bus_mode_set(const stmdev_ctx_t *ctx,
                              lis3dsh_bus_mode_t *val);
-int32_t lis3dsh_bus_mode_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_bus_mode_get(const stmdev_ctx_t *ctx,
                              lis3dsh_bus_mode_t *val);
 
 typedef enum {
@@ -734,7 +734,7 @@ typedef enum {
   LIS3DSH_BOOT      = 0x01, /* Restore calib. param. ( it takes 10ms ) */
   LIS3DSH_RESET     = 0x02, /* Reset configuration registers */
 } lis3dsh_init_t;
-int32_t lis3dsh_init_set(stmdev_ctx_t *ctx, lis3dsh_init_t val);
+int32_t lis3dsh_init_set(const stmdev_ctx_t *ctx, lis3dsh_init_t val);
 
 typedef struct {
 uint8_t sw_reset           :
@@ -743,16 +743,16 @@ uint8_t sw_reset           :
   uint8_t drdy_xl            : 1; /* Accelerometer data ready */
   uint8_t ovrn_xl            : 1; /* Accelerometer data overrun */
 } lis3dsh_status_var_t;
-int32_t lis3dsh_status_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_status_get(const stmdev_ctx_t *ctx,
                            lis3dsh_status_var_t *val);
 
 typedef struct {
   uint8_t active_low : 1; /* 1 = active low / 0 = active high */
   uint8_t latched    : 1; /* Signals 1 = latched / 0 = pulsed */
 } lis3dsh_int_mode_t;
-int32_t lis3dsh_interrupt_mode_set(stmdev_ctx_t *ctx,
+int32_t lis3dsh_interrupt_mode_set(const stmdev_ctx_t *ctx,
                                    lis3dsh_int_mode_t *val);
-int32_t lis3dsh_interrupt_mode_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_interrupt_mode_get(const stmdev_ctx_t *ctx,
                                    lis3dsh_int_mode_t *val);
 
 typedef struct {
@@ -763,9 +763,9 @@ typedef struct {
   uint8_t fsm1          : 1; /* State machine 1 interrupt event */
   uint8_t fsm2          : 1; /* State machine 2 interrupt event */
 } lis3dsh_pin_int1_route_t;
-int32_t lis3dsh_pin_int1_route_set(stmdev_ctx_t *ctx,
+int32_t lis3dsh_pin_int1_route_set(const stmdev_ctx_t *ctx,
                                    lis3dsh_pin_int1_route_t *val);
-int32_t lis3dsh_pin_int1_route_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_pin_int1_route_get(const stmdev_ctx_t *ctx,
                                    lis3dsh_pin_int1_route_t *val);
 
 typedef struct {
@@ -773,9 +773,9 @@ typedef struct {
   uint8_t fsm2          : 1; /* State machine 2 interrupt event */
   uint8_t boot          : 1; /* Restoring calibration parameters */
 } lis3dsh_pin_int2_route_t;
-int32_t lis3dsh_pin_int2_route_set(stmdev_ctx_t *ctx,
+int32_t lis3dsh_pin_int2_route_set(const stmdev_ctx_t *ctx,
                                    lis3dsh_pin_int2_route_t *val);
-int32_t lis3dsh_pin_int2_route_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_pin_int2_route_get(const stmdev_ctx_t *ctx,
                                    lis3dsh_pin_int2_route_t *val);
 
 typedef struct {
@@ -793,7 +793,7 @@ uint8_t fsm_ext_sync     :
   uint8_t fifo_full        : 1; /* FIFO full */
   uint8_t fifo_th          : 1; /* FIFO threshold reached */
 } lis3dsh_all_sources_t;
-int32_t lis3dsh_all_sources_get(stmdev_ctx_t *ctx,
+int32_t lis3dsh_all_sources_get(const stmdev_ctx_t *ctx,
                                 lis3dsh_all_sources_t *val);
 
 typedef struct {
@@ -817,8 +817,8 @@ typedef struct {
     LIS3DSH_16g  = 4,
   } fs;
 } lis3dsh_md_t;
-int32_t lis3dsh_mode_set(stmdev_ctx_t *ctx, lis3dsh_md_t *val);
-int32_t lis3dsh_mode_get(stmdev_ctx_t *ctx, lis3dsh_md_t *val);
+int32_t lis3dsh_mode_set(const stmdev_ctx_t *ctx, lis3dsh_md_t *val);
+int32_t lis3dsh_mode_get(const stmdev_ctx_t *ctx, lis3dsh_md_t *val);
 
 typedef struct {
   struct {
@@ -830,7 +830,7 @@ typedef struct {
     int8_t raw;
   } heat;
 } lis3dsh_data_t;
-int32_t lis3dsh_data_get(stmdev_ctx_t *ctx, lis3dsh_md_t *md,
+int32_t lis3dsh_data_get(const stmdev_ctx_t *ctx, lis3dsh_md_t *md,
                          lis3dsh_data_t *data);
 
 typedef enum {
@@ -838,8 +838,8 @@ typedef enum {
   LIS3DSH_ST_POSITIVE  = 1,
   LIS3DSH_ST_NEGATIVE  = 2,
 } lis3dsh_st_t;
-int32_t lis3dsh_self_test_set(stmdev_ctx_t *ctx, lis3dsh_st_t val);
-int32_t lis3dsh_self_test_get(stmdev_ctx_t *ctx, lis3dsh_st_t *val);
+int32_t lis3dsh_self_test_set(const stmdev_ctx_t *ctx, lis3dsh_st_t val);
+int32_t lis3dsh_self_test_get(const stmdev_ctx_t *ctx, lis3dsh_st_t *val);
 
 /**
   * @}

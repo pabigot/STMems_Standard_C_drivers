@@ -46,7 +46,7 @@
   * @retval       interface status (MANDATORY: return 0 -> no Error)
   *
   */
-int32_t ism303dac_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t ism303dac_read_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                            uint8_t *data,
                            uint16_t len)
 {
@@ -65,7 +65,7 @@ int32_t ism303dac_read_reg(stmdev_ctx_t *ctx, uint8_t reg,
   * @retval       interface status (MANDATORY: return 0 -> no Error)
   *
   */
-int32_t ism303dac_write_reg(stmdev_ctx_t *ctx, uint8_t reg,
+int32_t ism303dac_write_reg(const stmdev_ctx_t *ctx, uint8_t reg,
                             uint8_t *data,
                             uint16_t len)
 {
@@ -137,7 +137,7 @@ float_t ism303dac_from_lsb_to_celsius(int16_t lsb)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_all_sources_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_all_sources_get(const stmdev_ctx_t *ctx,
                                      ism303dac_xl_all_sources_t *val)
 {
   int32_t ret;
@@ -180,7 +180,7 @@ int32_t ism303dac_xl_all_sources_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_block_data_update_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_block_data_update_set(const stmdev_ctx_t *ctx,
                                            uint8_t val)
 {
   ism303dac_ctrl1_a_t ctrl1_a;
@@ -205,7 +205,7 @@ int32_t ism303dac_xl_block_data_update_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_block_data_update_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_block_data_update_get(const stmdev_ctx_t *ctx,
                                            uint8_t *val)
 {
   ism303dac_ctrl1_a_t ctrl1_a;
@@ -224,7 +224,7 @@ int32_t ism303dac_xl_block_data_update_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_block_data_update_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_block_data_update_set(const stmdev_ctx_t *ctx,
                                            uint8_t val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
@@ -249,7 +249,7 @@ int32_t ism303dac_mg_block_data_update_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_block_data_update_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_block_data_update_get(const stmdev_ctx_t *ctx,
                                            uint8_t *val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
@@ -268,7 +268,7 @@ int32_t ism303dac_mg_block_data_update_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_data_format_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_data_format_set(const stmdev_ctx_t *ctx,
                                      ism303dac_mg_ble_t val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
@@ -293,7 +293,7 @@ int32_t ism303dac_mg_data_format_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_data_format_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_data_format_get(const stmdev_ctx_t *ctx,
                                      ism303dac_mg_ble_t *val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
@@ -326,7 +326,7 @@ int32_t ism303dac_mg_data_format_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_full_scale_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_full_scale_set(const stmdev_ctx_t *ctx,
                                     ism303dac_xl_fs_t val)
 {
   ism303dac_ctrl1_a_t ctrl1_a;
@@ -351,7 +351,7 @@ int32_t ism303dac_xl_full_scale_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_full_scale_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_full_scale_get(const stmdev_ctx_t *ctx,
                                     ism303dac_xl_fs_t *val)
 {
   ism303dac_ctrl1_a_t ctrl1_a;
@@ -392,7 +392,7 @@ int32_t ism303dac_xl_full_scale_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_data_rate_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_data_rate_set(const stmdev_ctx_t *ctx,
                                    ism303dac_xl_odr_t val)
 {
   ism303dac_ctrl1_a_t ctrl1_a;
@@ -418,7 +418,7 @@ int32_t ism303dac_xl_data_rate_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_data_rate_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_data_rate_get(const stmdev_ctx_t *ctx,
                                    ism303dac_xl_odr_t *val)
 {
   ism303dac_ctrl1_a_t ctrl1_a;
@@ -519,7 +519,7 @@ int32_t ism303dac_xl_data_rate_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_status_reg_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_status_reg_get(const stmdev_ctx_t *ctx,
                                     ism303dac_status_a_t *val)
 {
   int32_t ret;
@@ -535,7 +535,7 @@ int32_t ism303dac_xl_status_reg_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_status_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_status_get(const stmdev_ctx_t *ctx,
                                 ism303dac_status_reg_m_t *val)
 {
   int32_t ret;
@@ -552,7 +552,7 @@ int32_t ism303dac_mg_status_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_flag_data_ready_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_flag_data_ready_get(const stmdev_ctx_t *ctx,
                                          uint8_t *val)
 {
   ism303dac_status_a_t status_a;
@@ -571,7 +571,7 @@ int32_t ism303dac_xl_flag_data_ready_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_data_ready_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_mg_data_ready_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_status_reg_m_t status_reg_m;
   int32_t ret;
@@ -589,7 +589,7 @@ int32_t ism303dac_mg_data_ready_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_data_ovr_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_mg_data_ovr_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_status_reg_m_t status_reg_m;
   int32_t ret;
@@ -611,7 +611,7 @@ int32_t ism303dac_mg_data_ovr_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_user_offset_set(stmdev_ctx_t *ctx, uint16_t *val)
+int32_t ism303dac_mg_user_offset_set(const stmdev_ctx_t *ctx, uint16_t *val)
 {
   uint8_t buff[6];
   int32_t ret;
@@ -637,7 +637,7 @@ int32_t ism303dac_mg_user_offset_set(stmdev_ctx_t *ctx, uint16_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_user_offset_get(stmdev_ctx_t *ctx, uint16_t *val)
+int32_t ism303dac_mg_user_offset_get(const stmdev_ctx_t *ctx, uint16_t *val)
 {
   uint8_t buff[6];
   int32_t ret;
@@ -659,7 +659,7 @@ int32_t ism303dac_mg_user_offset_get(stmdev_ctx_t *ctx, uint16_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_operating_mode_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_operating_mode_set(const stmdev_ctx_t *ctx,
                                         ism303dac_mg_md_t val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
@@ -684,7 +684,7 @@ int32_t ism303dac_mg_operating_mode_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_operating_mode_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_operating_mode_get(const stmdev_ctx_t *ctx,
                                         ism303dac_mg_md_t *val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
@@ -721,7 +721,7 @@ int32_t ism303dac_mg_operating_mode_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_data_rate_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_data_rate_set(const stmdev_ctx_t *ctx,
                                    ism303dac_mg_odr_t val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
@@ -746,7 +746,7 @@ int32_t ism303dac_mg_data_rate_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_data_rate_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_data_rate_get(const stmdev_ctx_t *ctx,
                                    ism303dac_mg_odr_t *val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
@@ -787,7 +787,7 @@ int32_t ism303dac_mg_data_rate_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_power_mode_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_power_mode_set(const stmdev_ctx_t *ctx,
                                     ism303dac_mg_lp_t val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
@@ -812,7 +812,7 @@ int32_t ism303dac_mg_power_mode_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_power_mode_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_power_mode_get(const stmdev_ctx_t *ctx,
                                     ism303dac_mg_lp_t *val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
@@ -845,7 +845,7 @@ int32_t ism303dac_mg_power_mode_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_offset_temp_comp_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_offset_temp_comp_set(const stmdev_ctx_t *ctx,
                                           uint8_t val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
@@ -870,7 +870,7 @@ int32_t ism303dac_mg_offset_temp_comp_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_offset_temp_comp_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_offset_temp_comp_get(const stmdev_ctx_t *ctx,
                                           uint8_t *val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
@@ -889,7 +889,7 @@ int32_t ism303dac_mg_offset_temp_comp_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_set_rst_mode_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_set_rst_mode_set(const stmdev_ctx_t *ctx,
                                       ism303dac_mg_set_rst_t val)
 {
   ism303dac_cfg_reg_b_m_t cfg_reg_b_m;
@@ -914,7 +914,7 @@ int32_t ism303dac_mg_set_rst_mode_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_set_rst_mode_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_set_rst_mode_get(const stmdev_ctx_t *ctx,
                                       ism303dac_mg_set_rst_t *val)
 {
   ism303dac_cfg_reg_b_m_t cfg_reg_b_m;
@@ -954,7 +954,7 @@ int32_t ism303dac_mg_set_rst_mode_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_set_rst_sensor_single_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_set_rst_sensor_single_set(const stmdev_ctx_t *ctx,
                                                uint8_t val)
 {
   ism303dac_cfg_reg_b_m_t cfg_reg_b_m;
@@ -982,7 +982,7 @@ int32_t ism303dac_mg_set_rst_sensor_single_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_set_rst_sensor_single_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_set_rst_sensor_single_get(const stmdev_ctx_t *ctx,
                                                uint8_t *val)
 {
   ism303dac_cfg_reg_b_m_t cfg_reg_b_m;
@@ -1013,7 +1013,7 @@ int32_t ism303dac_mg_set_rst_sensor_single_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_acceleration_module_raw_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_acceleration_module_raw_get(const stmdev_ctx_t *ctx,
                                               uint8_t *buff)
 {
   int32_t ret;
@@ -1030,7 +1030,7 @@ int32_t ism303dac_acceleration_module_raw_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_temperature_raw_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_temperature_raw_get(const stmdev_ctx_t *ctx,
                                          uint8_t *buff)
 {
   int32_t ret;
@@ -1047,7 +1047,7 @@ int32_t ism303dac_xl_temperature_raw_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_acceleration_raw_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_acceleration_raw_get(const stmdev_ctx_t *ctx,
                                        int16_t *val)
 {
   uint8_t buff[6];
@@ -1070,7 +1070,7 @@ int32_t ism303dac_acceleration_raw_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_magnetic_raw_get(stmdev_ctx_t *ctx, int16_t *val)
+int32_t ism303dac_magnetic_raw_get(const stmdev_ctx_t *ctx, int16_t *val)
 {
   uint8_t buff[6];
   int32_t ret;
@@ -1104,7 +1104,7 @@ int32_t ism303dac_magnetic_raw_get(stmdev_ctx_t *ctx, int16_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_device_id_get(stmdev_ctx_t *ctx, uint8_t *buff)
+int32_t ism303dac_xl_device_id_get(const stmdev_ctx_t *ctx, uint8_t *buff)
 {
   int32_t ret;
   ret = ism303dac_read_reg(ctx, ISM303DAC_WHO_AM_I_A, buff, 1);
@@ -1119,7 +1119,7 @@ int32_t ism303dac_xl_device_id_get(stmdev_ctx_t *ctx, uint8_t *buff)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_device_id_get(stmdev_ctx_t *ctx, uint8_t *buff)
+int32_t ism303dac_mg_device_id_get(const stmdev_ctx_t *ctx, uint8_t *buff)
 {
   int32_t ret;
   ret = ism303dac_read_reg(ctx, ISM303DAC_WHO_AM_I_M, buff, 1);
@@ -1135,7 +1135,7 @@ int32_t ism303dac_mg_device_id_get(stmdev_ctx_t *ctx, uint8_t *buff)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_auto_increment_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_auto_increment_set(const stmdev_ctx_t *ctx,
                                         uint8_t val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
@@ -1161,7 +1161,7 @@ int32_t ism303dac_xl_auto_increment_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_auto_increment_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_auto_increment_get(const stmdev_ctx_t *ctx,
                                         uint8_t *val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
@@ -1181,7 +1181,7 @@ int32_t ism303dac_xl_auto_increment_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_reset_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_reset_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
   int32_t ret;
@@ -1205,7 +1205,7 @@ int32_t ism303dac_xl_reset_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_reset_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_reset_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
   int32_t ret;
@@ -1223,7 +1223,7 @@ int32_t ism303dac_xl_reset_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_reset_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_mg_reset_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
   int32_t ret;
@@ -1247,7 +1247,7 @@ int32_t ism303dac_mg_reset_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_reset_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_mg_reset_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
   int32_t ret;
@@ -1265,7 +1265,7 @@ int32_t ism303dac_mg_reset_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_boot_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_boot_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
   int32_t ret;
@@ -1289,7 +1289,7 @@ int32_t ism303dac_xl_boot_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_boot_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_boot_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
   int32_t ret;
@@ -1307,7 +1307,7 @@ int32_t ism303dac_xl_boot_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_boot_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_mg_boot_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
   int32_t ret;
@@ -1331,7 +1331,7 @@ int32_t ism303dac_mg_boot_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_boot_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_mg_boot_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_cfg_reg_a_m_t cfg_reg_a_m;
   int32_t ret;
@@ -1349,7 +1349,7 @@ int32_t ism303dac_mg_boot_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_self_test_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_self_test_set(const stmdev_ctx_t *ctx,
                                    ism303dac_xl_st_t val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -1374,7 +1374,7 @@ int32_t ism303dac_xl_self_test_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_self_test_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_self_test_get(const stmdev_ctx_t *ctx,
                                    ism303dac_xl_st_t *val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -1411,7 +1411,7 @@ int32_t ism303dac_xl_self_test_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_self_test_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_mg_self_test_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
   int32_t ret;
@@ -1435,7 +1435,7 @@ int32_t ism303dac_mg_self_test_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_self_test_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_mg_self_test_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
   int32_t ret;
@@ -1453,7 +1453,7 @@ int32_t ism303dac_mg_self_test_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_data_ready_mode_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_data_ready_mode_set(const stmdev_ctx_t *ctx,
                                          ism303dac_xl_drdy_pulsed_t val)
 {
   ism303dac_ctrl5_a_t ctrl5_a;
@@ -1478,7 +1478,7 @@ int32_t ism303dac_xl_data_ready_mode_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_data_ready_mode_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_data_ready_mode_get(const stmdev_ctx_t *ctx,
                                          ism303dac_xl_drdy_pulsed_t *val)
 {
   ism303dac_ctrl5_a_t ctrl5_a;
@@ -1524,7 +1524,7 @@ int32_t ism303dac_xl_data_ready_mode_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_hp_path_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_hp_path_set(const stmdev_ctx_t *ctx,
                                  ism303dac_xl_fds_slope_t val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
@@ -1549,7 +1549,7 @@ int32_t ism303dac_xl_hp_path_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_hp_path_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_hp_path_get(const stmdev_ctx_t *ctx,
                                  ism303dac_xl_fds_slope_t *val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
@@ -1582,7 +1582,7 @@ int32_t ism303dac_xl_hp_path_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_low_pass_bandwidth_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_low_pass_bandwidth_set(const stmdev_ctx_t *ctx,
                                             ism303dac_mg_lpf_t val)
 {
   ism303dac_cfg_reg_b_m_t cfg_reg_b_m;
@@ -1607,7 +1607,7 @@ int32_t ism303dac_mg_low_pass_bandwidth_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_low_pass_bandwidth_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_low_pass_bandwidth_get(const stmdev_ctx_t *ctx,
                                             ism303dac_mg_lpf_t *val)
 {
   ism303dac_cfg_reg_b_m_t cfg_reg_b_m;
@@ -1653,7 +1653,7 @@ int32_t ism303dac_mg_low_pass_bandwidth_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_spi_mode_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_spi_mode_set(const stmdev_ctx_t *ctx,
                                   ism303dac_xl_sim_t val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
@@ -1678,7 +1678,7 @@ int32_t ism303dac_xl_spi_mode_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_spi_mode_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_spi_mode_get(const stmdev_ctx_t *ctx,
                                   ism303dac_xl_sim_t *val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
@@ -1711,7 +1711,7 @@ int32_t ism303dac_xl_spi_mode_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_i2c_interface_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_i2c_interface_set(const stmdev_ctx_t *ctx,
                                        ism303dac_xl_i2c_disable_t val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
@@ -1736,7 +1736,7 @@ int32_t ism303dac_xl_i2c_interface_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_i2c_interface_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_i2c_interface_get(const stmdev_ctx_t *ctx,
                                        ism303dac_xl_i2c_disable_t *val)
 {
   ism303dac_ctrl2_a_t ctrl2_a;
@@ -1769,7 +1769,7 @@ int32_t ism303dac_xl_i2c_interface_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_i2c_interface_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_i2c_interface_set(const stmdev_ctx_t *ctx,
                                        ism303dac_mg_i2c_dis_t val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
@@ -1794,7 +1794,7 @@ int32_t ism303dac_mg_i2c_interface_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_i2c_interface_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_i2c_interface_get(const stmdev_ctx_t *ctx,
                                        ism303dac_mg_i2c_dis_t *val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
@@ -1828,7 +1828,7 @@ int32_t ism303dac_mg_i2c_interface_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_cs_mode_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_cs_mode_set(const stmdev_ctx_t *ctx,
                                  ism303dac_xl_if_cs_pu_dis_t val)
 {
   ism303dac_fifo_ctrl_a_t fifo_ctrl_a;
@@ -1853,7 +1853,7 @@ int32_t ism303dac_xl_cs_mode_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_cs_mode_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_cs_mode_get(const stmdev_ctx_t *ctx,
                                  ism303dac_xl_if_cs_pu_dis_t *val)
 {
   ism303dac_fifo_ctrl_a_t fifo_ctrl_a;
@@ -1899,7 +1899,7 @@ int32_t ism303dac_xl_cs_mode_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_pin_mode_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_pin_mode_set(const stmdev_ctx_t *ctx,
                                   ism303dac_xl_pp_od_t val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -1924,7 +1924,7 @@ int32_t ism303dac_xl_pin_mode_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_pin_mode_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_pin_mode_get(const stmdev_ctx_t *ctx,
                                   ism303dac_xl_pp_od_t *val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -1957,7 +1957,7 @@ int32_t ism303dac_xl_pin_mode_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_pin_polarity_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_pin_polarity_set(const stmdev_ctx_t *ctx,
                                       ism303dac_xl_h_lactive_t val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -1982,7 +1982,7 @@ int32_t ism303dac_xl_pin_polarity_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_pin_polarity_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_pin_polarity_get(const stmdev_ctx_t *ctx,
                                       ism303dac_xl_h_lactive_t *val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -2015,7 +2015,7 @@ int32_t ism303dac_xl_pin_polarity_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_int_notification_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_int_notification_set(const stmdev_ctx_t *ctx,
                                           ism303dac_xl_lir_t val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -2040,7 +2040,7 @@ int32_t ism303dac_xl_int_notification_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_int_notification_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_int_notification_get(const stmdev_ctx_t *ctx,
                                           ism303dac_xl_lir_t *val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -2073,7 +2073,7 @@ int32_t ism303dac_xl_int_notification_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_pin_int1_route_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_pin_int1_route_set(const stmdev_ctx_t *ctx,
                                         ism303dac_xl_pin_int1_route_t val)
 {
   ism303dac_ctrl4_a_t ctrl4_a;
@@ -2116,7 +2116,7 @@ int32_t ism303dac_xl_pin_int1_route_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_pin_int1_route_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_pin_int1_route_get(const stmdev_ctx_t *ctx,
                                         ism303dac_xl_pin_int1_route_t *val)
 {
   ism303dac_ctrl4_a_t ctrl4_a;
@@ -2152,7 +2152,7 @@ int32_t ism303dac_xl_pin_int1_route_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_pin_int2_route_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_pin_int2_route_set(const stmdev_ctx_t *ctx,
                                         ism303dac_xl_pin_int2_route_t val)
 {
   ism303dac_ctrl5_a_t ctrl5_a;
@@ -2179,7 +2179,7 @@ int32_t ism303dac_xl_pin_int2_route_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_pin_int2_route_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_pin_int2_route_get(const stmdev_ctx_t *ctx,
                                         ism303dac_xl_pin_int2_route_t *val)
 {
   ism303dac_ctrl5_a_t ctrl5_a;
@@ -2204,7 +2204,7 @@ int32_t ism303dac_xl_pin_int2_route_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_all_on_int1_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_all_on_int1_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_ctrl5_a_t ctrl5_a;
   int32_t ret;
@@ -2228,7 +2228,7 @@ int32_t ism303dac_xl_all_on_int1_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_all_on_int1_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_all_on_int1_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_ctrl5_a_t ctrl5_a;
   int32_t ret;
@@ -2246,7 +2246,7 @@ int32_t ism303dac_xl_all_on_int1_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_drdy_on_pin_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_mg_drdy_on_pin_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
   int32_t ret;
@@ -2270,7 +2270,7 @@ int32_t ism303dac_mg_drdy_on_pin_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_drdy_on_pin_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_mg_drdy_on_pin_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
   int32_t ret;
@@ -2288,7 +2288,7 @@ int32_t ism303dac_mg_drdy_on_pin_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_int_on_pin_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_mg_int_on_pin_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
   int32_t ret;
@@ -2312,7 +2312,7 @@ int32_t ism303dac_mg_int_on_pin_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_int_on_pin_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_mg_int_on_pin_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_cfg_reg_c_m_t cfg_reg_c_m;
   int32_t ret;
@@ -2330,7 +2330,7 @@ int32_t ism303dac_mg_int_on_pin_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_int_gen_conf_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_int_gen_conf_set(const stmdev_ctx_t *ctx,
                                       ism303dac_int_crtl_reg_m_t *val)
 {
   int32_t ret;
@@ -2347,7 +2347,7 @@ int32_t ism303dac_mg_int_gen_conf_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_int_gen_conf_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_int_gen_conf_get(const stmdev_ctx_t *ctx,
                                       ism303dac_int_crtl_reg_m_t *val)
 {
   int32_t ret;
@@ -2364,7 +2364,7 @@ int32_t ism303dac_mg_int_gen_conf_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_int_gen_source_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_int_gen_source_get(const stmdev_ctx_t *ctx,
                                         ism303dac_int_source_reg_m_t *val)
 {
   int32_t ret;
@@ -2383,7 +2383,7 @@ int32_t ism303dac_mg_int_gen_source_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_int_gen_treshold_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_int_gen_treshold_set(const stmdev_ctx_t *ctx,
                                           uint16_t val)
 {
   uint8_t buff[2];
@@ -2404,7 +2404,7 @@ int32_t ism303dac_mg_int_gen_treshold_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_int_gen_treshold_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_int_gen_treshold_get(const stmdev_ctx_t *ctx,
                                           uint16_t *val)
 {
   uint8_t buff[2];
@@ -2449,7 +2449,7 @@ int32_t ism303dac_mg_int_gen_treshold_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_offset_int_conf_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_offset_int_conf_set(const stmdev_ctx_t *ctx,
                                          ism303dac_mg_int_on_dataoff_t val)
 {
   ism303dac_cfg_reg_b_m_t cfg_reg_b_m;
@@ -2475,7 +2475,7 @@ int32_t ism303dac_mg_offset_int_conf_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_mg_offset_int_conf_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_mg_offset_int_conf_get(const stmdev_ctx_t *ctx,
                                          ism303dac_mg_int_on_dataoff_t *val)
 {
   ism303dac_cfg_reg_b_m_t cfg_reg_b_m;
@@ -2508,7 +2508,7 @@ int32_t ism303dac_mg_offset_int_conf_get(stmdev_ctx_t *ctx,
 * @retval        Interface status (MANDATORY: return 0 -> no Error).
 *
 */
-int32_t ism303dac_xl_wkup_threshold_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_wkup_threshold_set(const stmdev_ctx_t *ctx,
                                         uint8_t val)
 {
   ism303dac_wake_up_ths_a_t wake_up_ths_a;
@@ -2533,7 +2533,7 @@ int32_t ism303dac_xl_wkup_threshold_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_wkup_threshold_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_wkup_threshold_get(const stmdev_ctx_t *ctx,
                                         uint8_t *val)
 {
   ism303dac_wake_up_ths_a_t wake_up_ths_a;
@@ -2552,7 +2552,7 @@ int32_t ism303dac_xl_wkup_threshold_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_wkup_dur_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_wkup_dur_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_wake_up_dur_a_t wake_up_dur_a;
   int32_t ret;
@@ -2576,7 +2576,7 @@ int32_t ism303dac_xl_wkup_dur_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_wkup_dur_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_wkup_dur_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_wake_up_dur_a_t wake_up_dur_a;
   int32_t ret;
@@ -2607,7 +2607,7 @@ int32_t ism303dac_xl_wkup_dur_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_sleep_mode_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_sleep_mode_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_wake_up_ths_a_t wake_up_ths_a;
   int32_t ret;
@@ -2631,7 +2631,7 @@ int32_t ism303dac_xl_sleep_mode_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_sleep_mode_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_sleep_mode_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_wake_up_ths_a_t wake_up_ths_a;
   int32_t ret;
@@ -2649,7 +2649,7 @@ int32_t ism303dac_xl_sleep_mode_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_act_sleep_dur_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_act_sleep_dur_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_wake_up_dur_a_t wake_up_dur_a;
   int32_t ret;
@@ -2673,7 +2673,7 @@ int32_t ism303dac_xl_act_sleep_dur_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_act_sleep_dur_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_act_sleep_dur_get(const stmdev_ctx_t *ctx,
                                        uint8_t *val)
 {
   ism303dac_wake_up_dur_a_t wake_up_dur_a;
@@ -2705,7 +2705,7 @@ int32_t ism303dac_xl_act_sleep_dur_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_detection_on_z_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_tap_detection_on_z_set(const stmdev_ctx_t *ctx,
                                             uint8_t val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -2730,7 +2730,7 @@ int32_t ism303dac_xl_tap_detection_on_z_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_detection_on_z_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_tap_detection_on_z_get(const stmdev_ctx_t *ctx,
                                             uint8_t *val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -2749,7 +2749,7 @@ int32_t ism303dac_xl_tap_detection_on_z_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_detection_on_y_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_tap_detection_on_y_set(const stmdev_ctx_t *ctx,
                                             uint8_t val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -2774,7 +2774,7 @@ int32_t ism303dac_xl_tap_detection_on_y_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_detection_on_y_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_tap_detection_on_y_get(const stmdev_ctx_t *ctx,
                                             uint8_t *val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -2793,7 +2793,7 @@ int32_t ism303dac_xl_tap_detection_on_y_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_detection_on_x_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_tap_detection_on_x_set(const stmdev_ctx_t *ctx,
                                             uint8_t val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -2818,7 +2818,7 @@ int32_t ism303dac_xl_tap_detection_on_x_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_detection_on_x_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_tap_detection_on_x_get(const stmdev_ctx_t *ctx,
                                             uint8_t *val)
 {
   ism303dac_ctrl3_a_t ctrl3_a;
@@ -2837,7 +2837,7 @@ int32_t ism303dac_xl_tap_detection_on_x_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_threshold_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_tap_threshold_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_tap_6d_ths_a_t tap_6d_ths_a;
   int32_t ret;
@@ -2861,7 +2861,7 @@ int32_t ism303dac_xl_tap_threshold_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_threshold_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_tap_threshold_get(const stmdev_ctx_t *ctx,
                                        uint8_t *val)
 {
   ism303dac_tap_6d_ths_a_t tap_6d_ths_a;
@@ -2884,7 +2884,7 @@ int32_t ism303dac_xl_tap_threshold_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_shock_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_tap_shock_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_int_dur_a_t int_dur_a;
   int32_t ret;
@@ -2912,7 +2912,7 @@ int32_t ism303dac_xl_tap_shock_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_shock_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_tap_shock_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_int_dur_a_t int_dur_a;
   int32_t ret;
@@ -2934,7 +2934,7 @@ int32_t ism303dac_xl_tap_shock_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_quiet_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_tap_quiet_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_int_dur_a_t int_dur_a;
   int32_t ret;
@@ -2962,7 +2962,7 @@ int32_t ism303dac_xl_tap_quiet_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_quiet_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_tap_quiet_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_int_dur_a_t int_dur_a;
   int32_t ret;
@@ -2985,7 +2985,7 @@ int32_t ism303dac_xl_tap_quiet_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_dur_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_tap_dur_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_int_dur_a_t int_dur_a;
   int32_t ret;
@@ -3014,7 +3014,7 @@ int32_t ism303dac_xl_tap_dur_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_dur_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_tap_dur_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_int_dur_a_t int_dur_a;
   int32_t ret;
@@ -3032,7 +3032,7 @@ int32_t ism303dac_xl_tap_dur_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_mode_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_tap_mode_set(const stmdev_ctx_t *ctx,
                                   ism303dac_xl_single_double_tap_t val)
 {
   ism303dac_wake_up_ths_a_t wake_up_ths_a;
@@ -3057,7 +3057,7 @@ int32_t ism303dac_xl_tap_mode_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_mode_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_tap_mode_get(const stmdev_ctx_t *ctx,
                                   ism303dac_xl_single_double_tap_t *val)
 {
   ism303dac_wake_up_ths_a_t wake_up_ths_a;
@@ -3090,7 +3090,7 @@ int32_t ism303dac_xl_tap_mode_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_tap_src_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_tap_src_get(const stmdev_ctx_t *ctx,
                                  ism303dac_tap_src_a_t *val)
 {
   int32_t ret;
@@ -3120,7 +3120,7 @@ int32_t ism303dac_xl_tap_src_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_6d_threshold_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_6d_threshold_set(const stmdev_ctx_t *ctx,
                                       ism303dac_xl_6d_ths_t val)
 {
   ism303dac_tap_6d_ths_a_t tap_6d_ths_a;
@@ -3145,7 +3145,7 @@ int32_t ism303dac_xl_6d_threshold_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_6d_threshold_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_6d_threshold_get(const stmdev_ctx_t *ctx,
                                       ism303dac_xl_6d_ths_t *val)
 {
   ism303dac_tap_6d_ths_a_t tap_6d_ths_a;
@@ -3186,7 +3186,7 @@ int32_t ism303dac_xl_6d_threshold_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_4d_mode_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_4d_mode_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_tap_6d_ths_a_t tap_6d_ths_a;
   int32_t ret;
@@ -3210,7 +3210,7 @@ int32_t ism303dac_xl_4d_mode_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_4d_mode_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_4d_mode_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_tap_6d_ths_a_t tap_6d_ths_a;
   int32_t ret;
@@ -3228,7 +3228,7 @@ int32_t ism303dac_xl_4d_mode_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_6d_src_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_6d_src_get(const stmdev_ctx_t *ctx,
                                 ism303dac_6d_src_a_t *val)
 {
   int32_t ret;
@@ -3257,7 +3257,7 @@ int32_t ism303dac_xl_6d_src_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_ff_dur_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_ff_dur_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_wake_up_dur_a_t wake_up_dur_a;
   ism303dac_free_fall_a_t free_fall_a;
@@ -3293,7 +3293,7 @@ int32_t ism303dac_xl_ff_dur_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_ff_dur_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_ff_dur_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_wake_up_dur_a_t wake_up_dur_a;
   ism303dac_free_fall_a_t free_fall_a;
@@ -3318,7 +3318,7 @@ int32_t ism303dac_xl_ff_dur_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_ff_threshold_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_ff_threshold_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_free_fall_a_t free_fall_a;
   int32_t ret;
@@ -3342,7 +3342,7 @@ int32_t ism303dac_xl_ff_threshold_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_ff_threshold_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_ff_threshold_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_free_fall_a_t free_fall_a;
   int32_t ret;
@@ -3373,7 +3373,7 @@ int32_t ism303dac_xl_ff_threshold_get(stmdev_ctx_t *ctx, uint8_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_xl_module_batch_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_xl_module_batch_set(const stmdev_ctx_t *ctx,
                                               uint8_t val)
 {
   ism303dac_fifo_ctrl_a_t fifo_ctrl_a;
@@ -3399,7 +3399,7 @@ int32_t ism303dac_xl_fifo_xl_module_batch_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_xl_module_batch_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_xl_module_batch_get(const stmdev_ctx_t *ctx,
                                               uint8_t *val)
 {
   ism303dac_fifo_ctrl_a_t fifo_ctrl_a;
@@ -3418,7 +3418,7 @@ int32_t ism303dac_xl_fifo_xl_module_batch_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_mode_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_mode_set(const stmdev_ctx_t *ctx,
                                    ism303dac_xl_fmode_t val)
 {
   ism303dac_fifo_ctrl_a_t fifo_ctrl_a;
@@ -3443,7 +3443,7 @@ int32_t ism303dac_xl_fifo_mode_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_mode_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_mode_get(const stmdev_ctx_t *ctx,
                                    ism303dac_xl_fmode_t *val)
 {
   ism303dac_fifo_ctrl_a_t fifo_ctrl_a;
@@ -3488,7 +3488,7 @@ int32_t ism303dac_xl_fifo_mode_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_watermark_set(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_watermark_set(const stmdev_ctx_t *ctx,
                                         uint8_t val)
 {
   int32_t ret;
@@ -3504,7 +3504,7 @@ int32_t ism303dac_xl_fifo_watermark_set(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_watermark_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_watermark_get(const stmdev_ctx_t *ctx,
                                         uint8_t *val)
 {
   int32_t ret;
@@ -3520,7 +3520,7 @@ int32_t ism303dac_xl_fifo_watermark_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_full_flag_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_full_flag_get(const stmdev_ctx_t *ctx,
                                         uint8_t *val)
 {
   ism303dac_fifo_src_a_t fifo_src_a;
@@ -3539,7 +3539,7 @@ int32_t ism303dac_xl_fifo_full_flag_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_ovr_flag_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_ovr_flag_get(const stmdev_ctx_t *ctx,
                                        uint8_t *val)
 {
   ism303dac_fifo_src_a_t fifo_src_a;
@@ -3558,7 +3558,7 @@ int32_t ism303dac_xl_fifo_ovr_flag_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_wtm_flag_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_wtm_flag_get(const stmdev_ctx_t *ctx,
                                        uint8_t *val)
 {
   ism303dac_fifo_src_a_t fifo_src_a;
@@ -3577,7 +3577,7 @@ int32_t ism303dac_xl_fifo_wtm_flag_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_data_level_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_data_level_get(const stmdev_ctx_t *ctx,
                                          uint16_t *val)
 {
   ism303dac_fifo_src_a_t       fifo_src_a;
@@ -3605,7 +3605,7 @@ int32_t ism303dac_xl_fifo_data_level_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_fifo_src_get(stmdev_ctx_t *ctx,
+int32_t ism303dac_xl_fifo_src_get(const stmdev_ctx_t *ctx,
                                   ism303dac_fifo_src_a_t *val)
 {
   int32_t ret;
@@ -3635,7 +3635,7 @@ int32_t ism303dac_xl_fifo_src_get(stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_module_sens_set(stmdev_ctx_t *ctx, uint8_t val)
+int32_t ism303dac_xl_module_sens_set(const stmdev_ctx_t *ctx, uint8_t val)
 {
   ism303dac_func_ctrl_a_t func_ctrl_a;
   int32_t ret;
@@ -3659,7 +3659,7 @@ int32_t ism303dac_xl_module_sens_set(stmdev_ctx_t *ctx, uint8_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t ism303dac_xl_module_sens_get(stmdev_ctx_t *ctx, uint8_t *val)
+int32_t ism303dac_xl_module_sens_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   ism303dac_func_ctrl_a_t func_ctrl_a;
   int32_t ret;
